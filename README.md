@@ -1,6 +1,7 @@
 ### 目录
 
 |--src （开发目录）<br/>
+|&emsp;&emsp;|-------app（存放请求)<br/>
 |&emsp;&emsp;|-------common（公共文件，例如css,工具代码等)<br/>
 |&emsp;&emsp;|-------components (组件目录)<br/>
 |&emsp;&emsp;|-------pages （页面目录,例如可以存放首页，分类页，个人中心等页面）<br/>
