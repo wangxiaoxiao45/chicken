@@ -1,13 +1,25 @@
 import React,{Component} from 'react'
 import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux'
+import {ConnectedRouter,routerMiddleware} from 'react-router-redux'
+import createHistory from 'history/createHashHistory'
 
-import './css/index.less'
+import './common/css/index.less'
 import 'antd-mobile/dist/antd-mobile.less'
 
+import store from './store'
 //引入组件
-import App from "./containers/app/index";
+import App from "./pages/app/index";
+
+const history = createHistory();
+const middleware = routerMiddleware(history);
+
 ReactDOM.render(
-    <App/>,
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <App/>
+        </ConnectedRouter>
+    </Provider>,
     document.querySelector("#root")
 );
 
