@@ -10,6 +10,7 @@
 |&emsp;&emsp;|-------index.tmpl.html (html模板文件)<br/>
 |&emsp;&emsp;|-------index.js （入口文件，可以在webpack.config.js中配置）<br/>
 |&emsp;&emsp;|-------store (state状态管理)<br/>
+|&emsp;&emsp;|-------utils (存放一些封装的功能)<br/>
 |<br/>
 |-------|-server （服务器目录）<br/>
 |<br/>
