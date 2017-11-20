@@ -9,6 +9,7 @@ import Bazaar from "../bazaar/bazaar";
 import Collect from "../collect/collect";
 import NavBar from "../../components/nav/nav";
 import Person from "../person/person";
+import AddMenu from "../addmenu/index";
 
 
 export default class App extends React.Component{
@@ -20,6 +21,7 @@ export default class App extends React.Component{
                    <Route path="/bazaar" component={Bazaar}/>
                    <Route path="/collect" component={Collect}/>
                    <Route path="/person" component={Person}/>
+                   <Route path="/addmenu" component={AddMenu}/>
                    <NavBar/>
                </div>
            </Router>

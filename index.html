@@ -11,15 +11,11 @@
         html {
             font-size: 100px; /*640设计稿：1REM=100PX*/
         }
-        #root{max-width:640px;}
+        #root{max-width:640px;
+            }
     </style>
-    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
     <script>
-        if ('addEventListener' in document) {
-            document.addEventListener('DOMContentLoaded', function() {
-                FastClick.attach(document.body);
-            }, false);
-        }
+
         if(!window.Promise) {
             document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
         }

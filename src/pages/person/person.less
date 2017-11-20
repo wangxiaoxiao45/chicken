@@ -1,0 +1,107 @@
+.person-header{
+  display: flex;
+  justify-content:space-between;
+  padding:.36rem .24rem .5rem;
+}
+.person-pro{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h4{
+    color:rgb(56,56,49);
+    font-size:.38rem;
+    line-height:.6rem;
+  }
+  a{
+    display: block;
+    color:rgb(108,108,103);
+    text-align: center;
+    font-size:.22rem;
+    line-height:.4rem;
+    i{
+      display:block;
+      font-size:.4rem;
+    }
+  }
+}
+.up-image{
+  overflow: hidden;
+  position: relative;
+  width:2rem;
+  height:2rem;
+  border-radius: 50%;
+  border:1px solid #f4f4f4;
+  img{
+    width:2rem;
+    height:2rem;
+    border-radius: 50%;
+  }
+  input[type=file]{
+    position: absolute;
+    left:0;
+    top:0;
+    width:2rem;
+    height:2rem;
+    opacity:0;
+  }
+}
+.person-content{
+  h4{
+    position: relative;
+    display:flex;
+    font-size:.24rem;
+    line-height:.8rem;
+    justify-content: space-around;
+    span{
+      color:rgb(56,56,49);
+      display:block;
+      width:50%;
+      cursor:pointer;
+      &.active{
+        color:rgb(250,103,80);
+      }
+    }
+    i{
+      position: absolute;
+      left:0;
+      bottom:0;
+      width:50%;
+      border-bottom:2px solid rgb(250,102,80);
+      transition:left 0.3s;
+    }
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border-top{
+    border-top:.5px solid rgb(229,229,227);
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .border-top{
+    border-top:.3333px solid rgb(229,229,227);
+  }
+}
+
+.add-menu-btn{
+  padding-top:1rem;
+  text-align: center;
+  line-height:.7rem;
+  p{
+    font-size:.28rem;
+    color:rgb(56,56,49);
+  }
+  a{
+    font-size:.26rem;
+    font-weight: bold;
+    color:rgb(250,102,80);
+    display:inline;
+  }
+}
+.swiper-wrapper .swiper-slide{
+  min-height:5rem !important;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    top:0;
+    bottom:auto;
+}
