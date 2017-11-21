@@ -6,6 +6,8 @@ import createHistory from 'history/createHashHistory'
 
 import './common/css/index.less'
 import 'antd-mobile/dist/antd-mobile.less'
+import 'swiper/dist/css/swiper.min.css'
+
 
 import store from './store'
 //引入组件
