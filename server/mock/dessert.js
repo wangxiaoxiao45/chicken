@@ -42,7 +42,7 @@ module.exports={
             title:"黄油曲奇",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/dessert/5.jpg",
+            titlebg:"/images/dessert/4.jpg",
             detail:{
                 detailImg:"/images/dessert/detail/6.jpg",
                 steps: [

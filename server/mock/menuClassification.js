@@ -20,12 +20,12 @@ module.exports={
         {
             menuId: 4,
             title: "早餐",
-            menubg: "/images/menuClassification/4.jpg",
+            menubg: "/images/menuClassification/3.jpg",
         },
         {
             menuId: 5,
             title: "肉类",
-            menubg: "/images/menuClassification/5.jpg",
+            menubg: "/images/menuClassification/4.jpg",
         },
         {
             menuId: 6,

@@ -42,7 +42,7 @@ module.exports={
             title:"蚝油生菜",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/vegetableDish/5.jpg",
+            titlebg:"/images/vegetableDish/4.jpg",
             detail:{
                 detailImg:"/images/vegetableDish/detail/6.jpg",
                 steps: [

@@ -55,6 +55,13 @@ let fish=require('./mock/fish');//导入鱼类列表
 let bearFood=require('./mock/bearFood');//导入下酒菜列表
 let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
 let dessert=require('./mock/dessert');//导入饮品列表
+let indexData=require('./mock/indexData');
+
+
+//获取首页数据
+app.get('/indexdata',function (req, res) {
+    res.send(indexData)
+});
 
 //获取分类列表
 app.get('/menuClassification',function (req, res) {
@@ -285,6 +292,7 @@ app.post('/login',function (req, res) {
     }
 });
 
+
 //当应用初始化的时候，会向后台发送一个请求，询问当前用户是否登录，如果登录的话则返回登录的用户并存放在仓库里。
 app.get('/validate',function(req,res){
     if(req.session.user){
@@ -293,6 +301,9 @@ app.get('/validate',function(req,res){
         res.json({code:1})
     }
 });
+
+
+
 
 const port=8887;
 app.listen(port,function () {

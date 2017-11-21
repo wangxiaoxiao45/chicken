@@ -41,7 +41,7 @@ module.exports={
             title:"番茄鸡肉浓情焗饭【两人份】",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/fastFood/5.jpg",
+            titlebg:"/images/fastFood/4.jpg",
             detail:{
                 detailImg:"/images/fastFood/detail/6.jpg",
                 steps: [

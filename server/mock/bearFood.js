@@ -42,7 +42,7 @@ module.exports={
             title:"秘制红烧鸡爪",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/bearFood/5.jpg",
+            titlebg:"/images/bearFood/4.jpg",
             detail:{
                 detailImg:"/images/bearFood/detail/6.jpg",
                 steps: [

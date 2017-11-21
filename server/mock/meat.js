@@ -41,7 +41,7 @@ module.exports={
             title:"蜜汁叉烧肉",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/meat/5.jpg",
+            titlebg:"/images/meat/4.jpg",
             detail:{
                 detailImg:"/images/meat/detail/6.jpg",
                 steps: [

@@ -25,7 +25,7 @@ module.exports={
             cooked:"41474",
             titlebg:"/images/homeDishes/3.jpg",
             detail:{
-                detailImg:"/images/homeDishes/detail/4.jpg",
+                detailImg:"/images/homeDishes/detail/3.jpg",
                 steps: [
                     {title:"步骤1", content:"猪小排冼净，晾干水份备用"},
                     {title:"步骤2", content:"锅内倒少量油，烧热之后，爆香姜片"},
@@ -41,7 +41,7 @@ module.exports={
             title:"油焖大虾",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/homeDishes/5.jpg",
+            titlebg:"/images/homeDishes/4.jpg",
             detail:{
                 detailImg:"/images/homeDishes/detail/6.jpg",
                 steps: [

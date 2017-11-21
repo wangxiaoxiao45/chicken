@@ -41,7 +41,7 @@ module.exports={
             title:"菠萝咕噜肉的做法",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/downMeal/5.jpg",
+            titlebg:"/images/downMeal/4.jpg",
             detail:{
                 detailImg:"/images/downMeal/detail/6.jpg",
                 steps: [

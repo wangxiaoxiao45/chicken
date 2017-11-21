@@ -41,7 +41,7 @@ module.exports={
             title:"清蒸老头鱼",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/fish/5.jpg",
+            titlebg:"/images/fish/4.jpg",
             detail:{
                 detailImg:"/images/fish/detail/6.jpg",
                 steps: [
