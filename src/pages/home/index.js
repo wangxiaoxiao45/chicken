@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import actions from '../../store/actions/home.js'
 import './index.less'
 import Swiper from 'swiper';
+import {get} from '../../../src/api/index'
 class Home extends Component{
 
     componentDidMount(){
@@ -18,6 +19,9 @@ class Home extends Component{
                  el: '.swiper-pagination',
              }
          });
+        /*get('/indexdata').then(function (data) {
+            console.log(data);
+        })*/
     }
     render(){
         return (
@@ -72,6 +76,9 @@ class Home extends Component{
                         <div className="swiper-pagination"></div>
 
 
+                    </div>
+                    <div className="scroll">
+                        div>p*2
                     </div>
                 </div>
 
