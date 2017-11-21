@@ -20,6 +20,13 @@ body{
   bottom: .96rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  .ceng{
+    position: fixed;
+    left: 0;
+    top: 45%;
+    width: 2rem;
+
+  }
   .banner{
     margin-top: .4rem;
     display: flex;
@@ -81,6 +88,47 @@ body{
 
     }
     height: 2rem;
+  }
+  .swiper-container{
+
+    .swiper-pagination-bullets{
+     top: .8rem;
+      span{
+
+        width: .1rem;
+        height: .1rem;
+       &.swiper-pagination-bullet-active{
+         background: orangered;
+       }
+      }
+    }
+    height: 1.5rem;
+    margin-top: .4rem;
+    .swiper-slide{
+      margin-left:-1px;
+      height: 1.5rem;
+      overflow: hidden;
+      display: flex;
+      img{
+
+        width: 1rem;
+        height: 1rem;
+      }
+      img:first-child{
+        width: .7rem;
+        height: .7rem;
+        margin-top: .2rem;
+        margin-left: 1rem;
+      }
+    }
+    span{
+      flex: 2;
+      height: 1.5rem;
+      margin-right: .7rem;
+      text-align: center;
+      line-height: 1rem;
+      color: #555555;
+    }
   }
 }
 .kheader{
