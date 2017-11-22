@@ -130,7 +130,7 @@ class AddMenu extends Component{
                                             <p>仅在下厨房发布，拥有特殊标示</p>
                                         </List.Item>
                                     </div>
-                                    <p className="del-list" onClick={this.del}>删除这个菜谱</p>
+                                    <p className="del-list"><span onClick={this.del}>删除这个菜谱</span></p>
                                     <a href="javascript:void(0);" className="menu-submit" onClick={this.bindleSubmit}>发布这个菜谱</a>
                                 </div>
                             </div>
