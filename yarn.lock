@@ -4197,6 +4197,10 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-contenteditable@^2.0.5:
+  version "2.0.5"
+  resolved "http://registry.npm.taobao.org/react-contenteditable/download/react-contenteditable-2.0.5.tgz#6ec24aea705f1c10a12414676cd36742bf1dcceb"
+
 react-dom@^16.1.1:
   version "16.1.1"
   resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-16.1.1.tgz#b2e331b6d752faf1a2d31399969399a41d8d45f8"

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import { Switch,List,Toast } from 'antd-mobile';
+import {push} from 'react-router-redux'
 import {connect} from 'react-redux'
 
 import actions from '../../store/actions/addmenu.js'
@@ -89,6 +90,9 @@ class AddMenu extends Component{
             "exclusive":props.exclusive,
         }).then((res)=>{
            if(res.success==='ok'){
+               Toast.info('提交成功',1,()=>{
+                   this.props.successMenu();
+               });
 
            }
         });

@@ -68,6 +68,14 @@ export default {
             });
             dispatch(push('/person'));
         }
+    },
+    successMenu(){
+        return dispatch=>{
+            dispatch({
+                type:types.DELETE_MENU
+            });
+            dispatch(push('/person'));
+        }
     }
 
 }
