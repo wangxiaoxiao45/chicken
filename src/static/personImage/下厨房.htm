@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-<!-- saved from url=(0030)http://localhost:8080/#/person -->
+<!-- saved from url=(0031)http://localhost:8080/#/addmenu -->
 <html lang="en" style="font-size: 58.5938px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>下厨房</title>
-    <link rel="stylesheet" href="./下厨房_files/font_479520_zupbkx9buyxpqfr.css">
+    <link rel="stylesheet" href="./下厨房_files/font_479520_aekkh9t7ti9vygb9.css">
     <style>
         html {
             font-size: 100px; /*640设计稿：1REM=100PX*/
         }
-        #root{max-width:640px;
-            }
+
     </style>
-    <script src="./下厨房_files/fastclick.js"></script>
     <script>
-        if ('addEventListener' in document) {
-            document.addEventListener('DOMContentLoaded', function() {
-                FastClick.attach(document.body);
-            }, false);
-        }
+
         if(!window.Promise) {
             document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
         }
@@ -41,6 +35,25 @@
 li {
   list-style: none;
 }
+input {
+  box-sizing: border-box;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #d6d6d6;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #d6d6d6;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #d6d6d6;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #d6d6d6;
+}
 .container {
   position: fixed;
   left: 0;
@@ -49,6 +62,15 @@ li {
   bottom: .96rem;
   overflow-y: auto;
   overflow-x: hidden;
+}
+.upFile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
 }
 </style><style type="text/css">/*do not import this file except components/style/index.less*/
 .am-fade-enter,
@@ -5737,39 +5759,38 @@ a {
   height: 2rem;
   border-radius: 50%;
 }
-.up-image input[type=file] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 2rem;
-  height: 2rem;
-  opacity: 0;
-}
 .person-content h4 {
-  padding-left: .2rem;
+  position: relative;
+  display: flex;
   font-size: .24rem;
   line-height: .8rem;
-}
-.person-content .border-top {
-  display: flex;
   justify-content: space-around;
 }
-.person-content .border-top span {
+.person-content h4 span {
   color: #383831;
+  display: block;
+  width: 50%;
+  cursor: pointer;
 }
-.person-content .border-top span.active {
+.person-content h4 span.active {
   color: #fa6750;
+}
+.person-content h4 i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  border-bottom: 2px solid #fa6650;
+  transition: left 0.3s;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .border-top {
     border-top: 0.5px solid #e5e5e3;
-    border-bottom: 0.5px solid #e5e5e3;
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 3) {
   .border-top {
     border-top: 0.3333px solid #e5e5e3;
-    border-bottom: 0.3333px solid #e5e5e3;
   }
 }
 .add-menu-btn {
@@ -5778,11 +5799,11 @@ a {
   line-height: .7rem;
 }
 .add-menu-btn p {
-  font-size: .32rem;
+  font-size: .28rem;
   color: #383831;
 }
 .add-menu-btn a {
-  font-size: .3rem;
+  font-size: .26rem;
   font-weight: bold;
   color: #fa6650;
   display: inline;
@@ -5790,14 +5811,259 @@ a {
 .swiper-wrapper .swiper-slide {
   min-height: 5rem !important;
 }
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  top: 0;
+  bottom: auto;
+}
 </style><style type="text/css">.top {
+  display: flex;
+  padding: 0 .2rem;
   text-align: center;
   font-size: .28rem;
   line-height: .8rem;
   border-bottom: 1px solid #f3f2f2;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
-</style><style type="text/css"></style><style type="text/css">/* This is not a zero-length file! */</style><style type="text/css">/* This is not a zero-length file! */</style></head>
+.top span {
+  color: #dbdbdb;
+}
+.top span.active {
+  color: #fb7b68;
+}
+</style><style type="text/css">.add-menu {
+  font-size: .24rem;
+}
+.add-menu .top {
+  border: none;
+}
+.add-menu .container {
+  bottom: 0;
+  z-index: 20;
+  background: #fff;
+}
+.add-menu input {
+  width: 100%;
+  border: none;
+  text-align: center;
+  color: #666;
+}
+.add-menu .editable {
+  margin: .15rem 0;
+  min-height: .5rem;
+  padding: .2rem;
+  border: none;
+  font-size: .26rem;
+  box-sizing: border-box;
+  color: #666;
+  line-height: .34rem;
+}
+.add-menu .editable.active {
+  color: #ccc;
+}
+.add-menu .small-font .editable {
+  font-size: .22rem;
+}
+.add-menu .add-menu-title {
+  padding: 0 .2rem;
+}
+.add-menu .add-menu-title input {
+  border-bottom: 1px solid #e5e5e3;
+  font-size: .32rem;
+  line-height: 1.2rem;
+}
+.menu-cover {
+  height: 5rem;
+}
+.menu-upload-img {
+  position: relative;
+  width: 100%;
+  background-color: #fafaf8;
+  border-bottom: 1px solid #fafaf8;
+}
+.menu-upload-img img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+.menu-upload-img i {
+  position: absolute;
+  right: 0.1rem;
+  top: .1rem;
+  z-index: 22;
+  font-size: .5rem;
+}
+.menu-upload-img span {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: .26rem;
+  color: #95958f;
+}
+.am-modal-button-group-h .am-modal-button {
+  font-size: .24rem!important;
+}
+.am-modal.am-modal-transparent .am-modal-content .am-modal-body {
+  padding-bottom: 25px;
+}
+.am-modal.am-modal-transparent .am-modal-content {
+  padding-top: 25px;
+}
+.am-modal-body {
+  color: #666;
+}
+.menu-list {
+  padding: 0 .2rem;
+}
+.menu-list h4 {
+  color: #383831;
+  font-size: .26rem;
+  line-height: .6rem;
+}
+.menu-bottom {
+  border-top: 0.2rem solid #fafaf8;
+}
+.menu-bottom .menu-bottom-dj {
+  padding: .2rem 0;
+  border-bottom: 1px solid #e5e5e3;
+}
+.menu-bottom .menu-bottom-dj strong {
+  color: #4e4e48;
+  font-weight: normal;
+  font-size: .26rem;
+}
+.menu-bottom .menu-bottom-dj p {
+  font-size: .22rem;
+  color: #989892;
+}
+.del-list {
+  text-align: right;
+  line-height: .7rem;
+  color: #989892;
+  font-size: .2rem;
+  padding-right: .2rem;
+}
+.menu-submit {
+  display: block;
+  width: 100%;
+  background: #f96650;
+  line-height: .8rem;
+  color: #fff;
+  text-align: center;
+  font-size: .26rem;
+}
+</style><style type="text/css">.menu-food h4 {
+  border-bottom: 1px solid #e5e5e3;
+}
+.menu-food li {
+  display: flex;
+  border-bottom: 1px solid #e5e5e3;
+  justify-content: space-between;
+  align-items: center;
+  height: .7rem;
+}
+.menu-food li i {
+  color: red;
+  margin-right: .3rem;
+}
+.menu-food li input {
+  padding-left: .1rem;
+  text-align: left;
+  line-height: .7rem;
+  font-size: .22rem;
+}
+.menu-food li span {
+  overflow: hidden;
+  margin-right: -0.2rem;
+  background: red;
+  color: #fff;
+  width: 40%;
+  text-align: center;
+  line-height: .7rem;
+  font-size: .24rem;
+  transform: translateX(200%);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.menu-food li span.active {
+  transform: translateX(0);
+}
+.add-food {
+  display: flex;
+  color: #fa6650;
+  font-size: .22rem;
+  line-height: .84rem;
+  justify-content: space-between;
+}
+.add-food span {
+  cursor: pointer;
+}
+</style><style type="text/css">.menu-step {
+  padding-top: .7rem;
+}
+.menu-step-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-step-hd span {
+  color: red;
+}
+.menu-upload {
+  margin-top: .3rem;
+}
+.menu-upload .menu-upload-img {
+  width: 100%;
+  height: 3rem;
+}
+.menu-upload li .step-num {
+  font-size: .24rem;
+  line-height: .6rem;
+  font-weight: normal;
+}
+.menu-upload li .menu-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-upload li .menu-img i {
+  color: red;
+  font-size: .4rem;
+}
+.menu-upload li .menu-img.active .menu-cover {
+  width: 90%;
+}
+.menu-change-step {
+  display: flex;
+  justify-content: space-between;
+  line-height: .7rem;
+}
+.menu-change-step span {
+  color: #fa735f;
+}
+.batch-up {
+  position: relative;
+}
+.batch-up input[type=file] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+</style><style type="text/css">/* This is not a zero-length file! */</style><style type="text/css">/* This is not a zero-length file! */</style></head>
 <body>
-    <div id="root"><div><div><div class="top">个人中心</div><div class="container"><header class="person-header"><div class="person-pro"><h4>用户名</h4><a href="http://localhost:8080/#/collect"><i class="iconfont icon-shoucang"></i>我的收藏</a></div><div class="up-image"><img src="./下厨房_files/1.jpg" alt=""><input type="file"></div></header><section class="person-content swiper-container swiper-container-horizontal swiper-container-ios"><h4 class="border-top swiper-pagination swiper-pagination-custom"><span class="active">菜谱</span><span>作品</span></h4><div class="swiper-wrapper"><div class="swiper-slide swiper-slide-active" style="width: 375px;"><div class="add-menu-btn"><p>创建菜谱的人是厨房里的天使</p><a href="http://localhost:8080/#/addmenu">开始创建第一道菜谱</a></div></div><div class="swiper-slide swiper-slide-next" style="width: 375px;">222</div></div></section></div></div><nav class="bottom-nav"><a aria-current="false" href="http://localhost:8080/#/"><i class="iconfont icon-shouye-copy" style="font-size: 0.46rem;"></i>下厨房</a><a aria-current="false" href="http://localhost:8080/#/bazaar"><i class="iconfont icon-02shouyeyixiangshiji" style="padding-top: 0.02rem; font-size: 0.38rem;"></i>市集</a><a aria-current="false" href="http://localhost:8080/#/collect"><i class="iconfont icon-shoucang" style="padding-top: 0.08rem;"></i>收藏</a><a class="active" aria-current="true" href="http://localhost:8080/#/person"><i class="iconfont icon-wo" style="padding-top: 0.08rem;"></i>我</a></nav></div></div>
+    <div id="root"><div><div class="add-menu"><div class="top"><span class="active">取消</span>菜谱名称<span class="">继续</span></div><section class="container"><form><div class="menu-cover menu-upload-img"><span>+菜谱封面</span><input type="file" class="upFile" name="imgCover"></div><div class="add-menu-title"><input type="text" value="" name="titleCover" placeholder="添加菜谱名称"></div><div><div class="menu-list"><div><div class="editable active" contenteditable="true">输入这道美食背后的故事</div></div><div class="menu-food"><h4>用料</h4><ul><li><input type="text" value="" data-index="0" placeholder="食材：如鸡蛋"><input type="text" value="" data-index="0" placeholder="用量：如1只"></li></ul><div class="add-food"><span>再增加一行</span><span>调整用料</span></div></div><div class="menu-step"><div class="menu-step-hd"><h4>做法</h4><div class="batch-up"><span>批量上传</span><input type="file" multiple=""></div></div><ul class="menu-upload"><li><h5 class="step-num">步骤1</h5><div class="menu-img"><div class="menu-cover menu-upload-img"><span>+步骤图</span><input type="file" class="upFile" name="imgCover"></div></div><div><div class="editable active" data-index="0" contenteditable="true">添加步骤说明</div></div></li></ul><div class="menu-change-step"><span>再增加一步</span><span>调整步骤</span></div></div><h4>小贴士</h4><div class="small-font"><div><div class="editable active" contenteditable="true">添加小贴士，这道菜有哪些可供厨友参考的小技巧</div></div></div></div><div class="menu-bottom"><div class="menu-bottom-dj"><div class="am-list-item am-list-item-middle"><div class="am-list-line"><div class="am-list-content"><strong>独家菜谱</strong><p>仅在下厨房发布，拥有特殊标示</p></div><div class="am-list-extra"><label class="am-switch"><input type="checkbox" name="" class="am-switch-checkbox" value="off"><div class="checkbox"></div></label></div></div><div class="am-list-ripple" style="display: none;"></div></div></div><p class="del-list">删除这个菜谱</p><a href="javascript:void(0);" class="menu-submit">发布这个菜谱</a></div></div></form></section></div><nav class="bottom-nav"><a aria-current="false" href="http://localhost:8080/#/"><i class="iconfont icon-shouye-copy" style="font-size: 0.46rem;"></i>下厨房</a><a aria-current="false" href="http://localhost:8080/#/bazaar"><i class="iconfont icon-02shouyeyixiangshiji" style="padding-top: 0.02rem; font-size: 0.38rem;"></i>市集</a><a aria-current="false" href="http://localhost:8080/#/collect"><i class="iconfont icon-shoucang" style="padding-top: 0.08rem;"></i>收藏</a><a aria-current="false" href="http://localhost:8080/#/person"><i class="iconfont icon-wo" style="padding-top: 0.08rem;"></i>我</a></nav></div></div>
 <script type="text/javascript" src="./下厨房_files/bundle.js"></script>
 </body></html>

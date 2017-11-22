@@ -5,7 +5,23 @@ const path=require('path');
 const app=new express();
 
 
-let regBase64=/^data:image\/\w+;base64,/;
+app.use(express.static(path.resolve('./mock')));
+//导入数据
+let menuClassification=require('./mock/menuClassification');//导入菜品分类
+let homedishes=require('./mock/homeDishes');//导入家常菜列表
+let fastFood=require('./mock/fastFood');//导入快手菜列表
+let downMeal=require('./mock/downMeal');//导入下饭菜列表
+let breakFast=require('./mock/breakFast');//导入早餐列表
+let meat=require('./mock/meat');//导入肉类列表
+let fish=require('./mock/fish');//导入鱼类列表
+let bearFood=require('./mock/bearFood');//导入下酒菜列表
+let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
+let dessert=require('./mock/dessert');//导入饮品列表
+let indexData=require('./mock/indexData');
+
+
+
+let regBase64=/^data:image\/\w+;base64,/;  //匹配base64
 
 app.use(express.static("img"));
 
@@ -43,19 +59,11 @@ app.get("/getimage",(req,res)=>{
     res.json({src:"http://"+req.headers.host+"/1.jpg"});
 });
 
-app.use(express.static(path.resolve('./mock')));
-//导入数据
-let menuClassification=require('./mock/menuClassification');//导入菜品分类
-let homedishes=require('./mock/homeDishes');//导入家常菜列表
-let fastFood=require('./mock/fastFood');//导入快手菜列表
-let downMeal=require('./mock/downMeal');//导入下饭菜列表
-let breakFast=require('./mock/breakFast');//导入早餐列表
-let meat=require('./mock/meat');//导入肉类列表
-let fish=require('./mock/fish');//导入鱼类列表
-let bearFood=require('./mock/bearFood');//导入下酒菜列表
-let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
-let dessert=require('./mock/dessert');//导入饮品列表
-let indexData=require('./mock/indexData');
+//获取菜谱
+app.post("/addmenu",(req,res)=>{
+    console.log(req.body);
+    res.json({success:"ok"});
+});
 
 
 //获取首页数据

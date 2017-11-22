@@ -13,7 +13,7 @@ import Top from "../../components/top/index";
 export default class Person extends Component{
     constructor(){
         super();
-        this.state={current:1};
+        this.state={current:1,imgSrc:require("../../static/personImage/picture.jpg")};
     }
     //上传图片
     changeImage=(e)=>{
@@ -21,21 +21,23 @@ export default class Person extends Component{
         if(!target.value) return;
 
         let imageSrc=URL.createObjectURL(target.files[0]);
-        compressImage(imageSrc,(compressImage)=>{
-          this.imgEle.src=compressImage;
-
-          post('/upimage',{
-              src:compressImage
+        compressImage(imageSrc,0.6,(img)=>{
+          this.setState({
+              imgSrc:img
           });
-
+          post('/upimage',{
+              src:img
+          });
           //释放内存
-          URL.revokeObjectURL(imageSrc);
+            URL.revokeObjectURL(imageSrc);
         });
 
     };
     componentDidMount(){
         get("/getimage").then((res)=>{
-            this.imgEle.src=res.src;
+            this.setState({
+                imgSrc:res.src
+            });
         });
         let _this=this;
         this.mySwiper=new Swiper('.swiper-container', {
@@ -54,6 +56,7 @@ export default class Person extends Component{
             }
         });
     }
+    //选项按钮
     handleClick=(e)=>{
         let num=Number(e.target.dataset.num);
 
@@ -81,8 +84,8 @@ export default class Person extends Component{
                             </Link>
                         </div>
                         <div className="up-image">
-                            <img src="" ref={(img)=>this.imgEle=img} alt=""/>
-                            <input type="file" onChange={this.changeImage}/>
+                            <img src={this.state.imgSrc} ref={img=>this.imgEle=img} alt=""/>
+                            <input type="file" className="upFile" onChange={this.changeImage}/>
                         </div>
                     </header>
                     <section className="person-content swiper-container">
