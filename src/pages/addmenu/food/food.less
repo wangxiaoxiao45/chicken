@@ -1,0 +1,48 @@
+.menu-food{
+  h4{
+    border-bottom:1px solid rgb(229,229,227);
+  }
+  li{
+      display:flex;
+      border-bottom:1px solid rgb(229,229,227);
+      justify-content:space-between;
+      align-items: center;
+      height:.7rem;
+      i{
+        color:red;
+        margin-right:.3rem;
+      }
+      input{
+        padding-left:.1rem;
+        text-align: left;
+        line-height:.7rem;
+        font-size:.22rem;
+      }
+      span{
+        overflow: hidden;
+        margin-right:-.2rem;
+        background:red;
+        color:#fff;
+        width:40%;
+        text-align: center;
+        line-height:.7rem;
+        font-size:.24rem;
+        transform:translateX(200%);
+        transition:0.5s;
+        cursor:pointer;
+        &.active{
+          transform:translateX(0);
+        }
+      }
+    }
+}
+.add-food{
+  display:flex;
+  color:rgb(250,102,80);
+  font-size:.22rem;
+  line-height:.84rem;
+  justify-content: space-between;
+  span{
+    cursor: pointer;
+  }
+}

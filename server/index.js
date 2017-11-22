@@ -42,5 +42,11 @@ app.get("/getimage",(req,res)=>{
     res.json({src:"http://"+req.headers.host+"/1.jpg"});
 });
 
+//获取菜谱
+app.post("/addmenu",(req,res)=>{
+    console.log(req.body);
+    res.json({success:"ok"});
+});
+
 
 app.listen(port);
