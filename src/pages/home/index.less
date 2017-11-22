@@ -2,15 +2,11 @@ body{
   background: white;
 }
 .home{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
   padding: 0 .3rem;
   position: relative;
   .loader{
     position: fixed;
-    left: 42%;
+    left: 45%;
     top: 1.8rem;
     width: .3rem;
     height: .2rem;
@@ -144,11 +140,144 @@ body{
     }
   }
 }
+.fade-enter{
+  opacity: 0;
+}
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-exit.fade-exit-active{
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 .kheader{
-  margin-top: .2rem;
-
+ position: fixed;
+  left:.4rem;
+  top: .2rem;
+  z-index: 3;
+  height: .8rem;
  color: #555;
 font-weight: 500;
+  .show{
+    background: white;
+    width: 10rem;
+    height: 20rem;
+    position: absolute;
+    top: -1rem;
+    left: -6rem;
+    z-index: 10;
+  .center{
+    color: #555555;
+    position: absolute;
+    width:6.15rem;
+    height: 11.1rem;
+    left: .5rem;
+    top: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-bottom: .5rem;
+    }
+    .camera{
+      display: flex;
+      justify-content: center;
+      margin-top: .4rem;
+      overflow: hidden;
+      p{
+        text-align: center;
+        color: #555555;
+      }
+    }
+    .list{
+      width: 2.2rem;
+    }
+    .left{
+      margin-right: .4rem;
+      .list{
+        border: 1px solid lightskyblue;
+        .yi{
+          width: 100%;
+          height: 1.8rem;
+          background: lightskyblue;
+        }
+        .er{
+          width: 1.8rem;
+          height: .8rem;
+          margin-left: .2rem;
+          margin-top: .2rem;
+          background: lightskyblue;
+        }
+        .san{
+          width: 1.8rem;
+          height: .8rem;
+          margin-left: .2rem;
+          margin-top: .24rem;
+          background: lightskyblue;
+        }
+
+      }
+    }
+    .left .list{
+      border: 1px solid lightskyblue;
+    }
+    .right{
+      .list{
+        overflow: hidden;
+        .yi{
+          width: 1.9rem;
+          margin-left: .15rem;
+          margin-top: .15rem;
+          height: 2.4rem;
+          background: lightyellow;
+        }
+        .er{
+          width: 1.9rem;
+          margin-left: .15rem;
+          margin-top: .15rem;
+          height: .4rem;
+          background: lightyellow;
+        }
+        .san{
+          width: 1rem;
+          margin-left: .15rem;
+          margin-top: .15rem;
+          height: .4rem;
+          background: lightyellow;
+        margin-bottom: .18rem;
+        }
+
+      }
+    }
+    .right .list{
+      border: 1px solid lightyellow;
+    }
+  }
+  }
+  i:first-child{
+ /* position: fixed;
+    left: .2rem;
+    z-index:18;*/
+    position: absolute;
+    left: 0;
+    top: .15rem;
+    z-index: 20;
+   display: inline-block;
+    &.z-rotate{
+      transform: rotate(45deg);  }
+    &.f-rotate{
+      transform: rotate(0deg);  }
+    transition: .3s;
+  }
+
   input{
 
     border-radius: .05rem;
@@ -158,7 +287,7 @@ font-weight: 500;
     height: .6rem;
     font-size: .28rem;
     font-weight: 200;
-    margin-left: .2rem;
+    margin-left: .45rem;
     margin-right: .2rem;
   }
   div{
@@ -172,6 +301,7 @@ font-weight: 500;
       top: .06rem;
      font-size: .38rem;
       font-weight: bold;
+      z-index: 5;
     }
     .icon-yuyin{
       position: absolute;
@@ -228,7 +358,9 @@ font-weight: 500;
   text-align: center;
   font-size: .28rem;
   color: #cccccc;
-  margin-top: .3rem;
+  margin-bottom: .1rem;
+  margin-top: -.7rem;
+
 }
 
 .teach{
