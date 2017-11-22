@@ -147,7 +147,46 @@ constructor(){
                         </ReactIScroll>
 
                     </div>
-                    <div className="space"></div>
+                    <div className="scroll">
+                        <div className="header">
+                            <p>{this.props.four.title}</p>
+                            <p>查看全部</p>
+                        </div>
+
+                        <ReactIScroll iScroll={iScroll}
+                                      options={{mouseWheel: false,  scrollX: true,momentum:true,freeScroll: true,disablePointer: true,disableTouch:false,disableMouse:false}}>
+                            <div style={{width:'250%'}}>
+                                <ul>
+                                    {
+                                        this.props.four.list.map((item,index)=>(
+                                            <li style={{marginBottom:'-.2rem'}} key={index}><span className="buy">{item.buy}</span><img src={item.img} alt=""/><p>{item.title}</p></li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </ReactIScroll>
+
+                    </div>
+                    <div className="scroll five">
+                        <div className="header">
+                            <p>{this.props.five.title}</p>
+                            <p>查看全部</p>
+                        </div>
+
+                        <ReactIScroll iScroll={iScroll}
+                                      options={{mouseWheel: false,  scrollX: true,momentum:true,freeScroll: true,disablePointer: true,disableTouch:false,disableMouse:false}}>
+                            <div style={{width:'400%'}}>
+                                <ul>
+                                    {
+                                        this.props.five.list.map((item,index)=>(
+                                            <li style={{marginBottom:'-.2rem'}} key={index}><span>{item.score}</span><img src={item.img} alt=""/><p>{item.title}</p></li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </ReactIScroll>
+
+                    </div>
                     <div className="loading">
                         {
                        this.props.loading?this.props.loading:''
