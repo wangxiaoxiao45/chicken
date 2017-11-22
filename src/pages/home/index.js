@@ -7,6 +7,8 @@ import Swiper from 'swiper';
 import {get} from '../../../src/api/index'
 
 import ReactIScroll from 'react-iscroll';
+import {downRefresh} from "../../utils";
+import Loading from "../../components/loading/loading";
 let iScroll = require('iscroll');
 class Home extends Component{
 constructor(){
@@ -26,12 +28,15 @@ constructor(){
              }
          });
         this.props.getState();
+        downRefresh(this.mainBox,this.props.downRefresh);
 
     }
     render(){
         console.log('xx',this.state.list);
+
         return (
             <div className="home">
+                {/*header*/}
                 <div className="kheader">
                     <i className="iconfont icon-icon1460189708222"></i>
                     <div>
@@ -43,7 +48,10 @@ constructor(){
 
                     <i className="iconfont icon-biji"></i>
                 </div>
-                <div className="main">
+                <div className="loader"><Loading/></div>
+
+                {/*main*/}
+                <div className="main" ref={input=>this.mainBox=input}>
 
                     <div className="banner">
 
@@ -139,7 +147,7 @@ constructor(){
                                 <ul>
                                     {
                                         this.props.third.list.map((item,index)=>(
-                                            <li key={index}><span className="special">{item.special}</span><span className="price">{item.price}/{item.stage}</span><img src={item.img} alt=""/><p>{item.title}</p></li>
+                                            <li key={index}><span style={index==1?{width:'.8rem'}:null} className={index==1?'special':'special'} >{item.special}</span><span className="price">{item.price}/{item.stage}</span><img src={item.img} alt=""/><p>{item.title}</p></li>
                                         ))
                                     }
                                 </ul>

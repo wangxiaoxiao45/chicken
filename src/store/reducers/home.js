@@ -42,6 +42,17 @@ export default function (state=initState,action){
             loading:''
         }
     }
+    if(action.type===types.CLEAR){
+        return {
+            first:{title:'',list:[]},
+            second:{title:'',list:[]},
+            third:{title:'',list:[]},
+            four:{title:'',list:[]},
+            five:{title:'',list:[]},
+            loading:''
+
+        };
+    }
 
     return state;
 }
