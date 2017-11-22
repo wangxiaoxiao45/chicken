@@ -13,4 +13,6 @@ export const MENU_TIPS='MENU_TIPS';//小贴士
 export const MENU_EXCLUSIVE='MENU_EXCLUSIVE';//小贴士
 export const DELETE_MENU='DELETE_MENU';//删除菜谱
 
+export const LOADING='LOADING';
+export const CLEAR='CLEAR';
 

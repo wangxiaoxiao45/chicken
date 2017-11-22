@@ -8,25 +8,28 @@ body{
   box-sizing: border-box;
   padding: 0 .3rem;
   position: relative;
+  .loader{
+    position: fixed;
+    left: 42%;
+    top: 1.8rem;
+    width: .3rem;
+    height: .2rem;
+    z-index: 0;
+  }
 }
 
 .main{
+  background: white;
  position: fixed;
   width: 100%;
   padding: 0 .3rem;
   box-sizing: border-box;
-  top: .96rem;
+  top: .9rem;
   left: 0;
   bottom: .96rem;
   overflow-x: hidden;
   overflow-y: scroll;
-  .ceng{
-    position: fixed;
-    left: 0;
-    top: 45%;
-    width: 2rem;
 
-  }
   .banner{
     margin-top: .4rem;
     display: flex;
@@ -88,6 +91,16 @@ body{
 
     }
     height: 2rem;
+  }
+  .wrapper-slider{
+    position: relative;
+    .ceng{
+      position: absolute;
+      left: -.3rem;
+      top: -.2rem;
+      width: 1.6rem;
+
+    }
   }
   .swiper-container{
 
@@ -167,5 +180,137 @@ font-weight: 500;
       font-size: .33rem;
       font-weight: normal;
     }
+  }
+}
+.scroll{
+  margin-bottom: .4rem;
+}
+.scroll li{
+  position: relative;
+  float:left;
+  height: 5rem;
+  width:2.6rem;
+  margin-right: .2rem;
+  img{
+    width:100%;
+    height: 78%;
+  }
+  p{
+    font-weight: bold;
+    font-size: .24rem;
+    color: black!important;
+  }
+  span{
+    position: absolute;
+    color: white;
+    left: .2rem;
+    bottom: 1.1rem;
+    font-size: .35rem;
+    font-weight: 900;
+  }
+}
+.scroll{
+  .header{
+    height: .8rem;
+  }
+  p:first-child{
+    float: left;
+    color: #555555;
+    font-weight: bold;
+    font-size: .3rem;
+  }
+  p:last-child{
+    float: right;
+    color: #999;
+  }
+}
+.loading{
+  text-align: center;
+  font-size: .28rem;
+  color: #cccccc;
+  margin-top: .3rem;
+}
+
+.teach{
+  position: absolute;
+  bottom: 2.2rem!important;
+  width:.6rem;
+  border-radius: .03rem;
+  height: .3rem;
+  text-align: center;
+  background: white;
+  line-height: .3rem;
+  font-size: .24rem!important;
+  color: black!important;
+
+}
+.teachName{
+  position: absolute;
+  bottom: 1.6rem!important;
+}
+
+.lesson{
+  li{
+    height: 5rem;
+    img{
+      height: 73%;
+    }
+
+  }
+  .canyu{
+    text-align: left;
+    width: 100%;
+    margin-top: .2rem;
+
+    font-weight: lighter;
+    font-size: .12rem;
+  }
+}
+/*电子书*/
+.special{
+  position: absolute;
+  bottom: 2rem!important;
+  width:.6rem;
+  border-radius: .03rem;
+  height: .3rem;
+  text-align: center;
+  background: white;
+  line-height: .3rem;
+  font-size: .24rem!important;
+  color: black!important;
+}
+.price{
+  position: absolute;
+  bottom: 1.4rem!important;
+}
+.buy{
+  position: absolute;
+  bottom: 1.5rem!important;
+  width:1.1rem;
+  border-radius: .03rem;
+  height: .3rem;
+  text-align: center;
+  background: white;
+  line-height: .3rem;
+  font-size: .24rem!important;
+  color: black!important;
+
+}
+.five li{
+  width:5.2rem;
+  p{
+    position: absolute;
+    width:100%;
+    top: 52%;
+    left: 4%;
+    font-size: .4rem;
+    color: white!important;
+    text-align: left;
+  }
+  span{
+    font-size: .24rem;
+    position: absolute;
+    top: 65%;
+    left: 4%;
   }
 }
