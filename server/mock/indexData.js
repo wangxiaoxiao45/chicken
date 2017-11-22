@@ -93,7 +93,7 @@ module.exports = {
             {
                 indexId: 2,
                 title: "40道辅食菜谱实战+系统知识详解",
-                img: "/images/indexImg/third/2.jpg",
+                img: "/images/indexImg/third/5.jpg",
                 special: '电子书',
                 price:'￥9.9',
                 stage:'98篇',
