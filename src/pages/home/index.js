@@ -50,7 +50,6 @@ constructor(){
                         <input type="text" placeholder="搜索菜谱、食材"/>
                         <i className="iconfont icon-yuyin"></i>
                         <TransitionGroup>
-
                             {
                                 !this.state.flag&&<CSSTransition timeout={500} classNames="fade"><div className="show"><div className="center">
                                     <img src={require('./img/head.png')} alt=""/><p>分享的人是厨房里的天使</p>

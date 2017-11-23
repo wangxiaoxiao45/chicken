@@ -3,7 +3,7 @@ module.exports={
     hasMore:true,
     list:[
         {
-            homeId:1,
+            id:1,
             title:"可乐鸡翅",
             score:"8.1",
             cooked:"50136",
@@ -19,13 +19,13 @@ module.exports={
             }
         },
         {
-            homeId:2,
+            id:2,
             title:"懒人版糖醋排骨",
             score:"8.5",
             cooked:"41474",
             titlebg:"/images/homeDishes/3.jpg",
             detail:{
-                detailImg:"/images/homeDishes/detail/3.jpg",
+                detailImg:"/images/homeDishes/detail/4.jpg",
                 steps: [
                     {title:"步骤1", content:"猪小排冼净，晾干水份备用"},
                     {title:"步骤2", content:"锅内倒少量油，烧热之后，爆香姜片"},
@@ -37,11 +37,11 @@ module.exports={
             }
         },
         {
-            homeId:3,
+            id:3,
             title:"油焖大虾",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/homeDishes/4.jpg",
+            titlebg:"/images/homeDishes/5.jpg",
             detail:{
                 detailImg:"/images/homeDishes/detail/6.jpg",
                 steps: [
@@ -56,7 +56,7 @@ module.exports={
             }
         },
         {
-            homeId:4,
+            id:4,
             title:"麻婆豆腐",
             score:"7.7",
             cooked:"16392",
@@ -76,7 +76,7 @@ module.exports={
             }
         },
         {
-            homeId:5,
+            id:5,
             title:"吃着碗里的看着锅里的红烧肉",
             score:"6.6",
             cooked:"13331",
@@ -99,7 +99,7 @@ module.exports={
             }
         },
         {
-            homeId:6,
+            id:6,
             title:"酸辣土豆丝",
             score:"7.5",
             cooked:"24886",
@@ -122,7 +122,7 @@ module.exports={
             }
         },
         {
-            homeId:7,
+            id:7,
             title:"大盘鸡",
             score:"9.5",
             cooked:"77629",
@@ -145,7 +145,7 @@ module.exports={
             }
         },
         {
-            homeId:8,
+            id:8,
             title:"鱼香肉丝",
             score:"7.3",
             cooked:"23287",
@@ -168,7 +168,7 @@ module.exports={
             }
         },
         {
-            homeId:9,
+            id:9,
             title:"干锅菜花",
             score:"8.1",
             cooked:"23287",
@@ -192,7 +192,7 @@ module.exports={
         },
 
         {
-            homeId:10,
+            id:10,
             title:"培根卷金针菇",
             score:"7.1",
             cooked:"23287",
