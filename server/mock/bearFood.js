@@ -7,6 +7,7 @@ module.exports={
             id:1,
             title:"盐煎鸡翅",
             score:"8.1",
+            collection:false,
             cooked:"50136",
             titlebg:"/images/bearFood/1.jpg",
             detail:{
@@ -23,6 +24,7 @@ module.exports={
             id:2,
             title:"麻辣香锅",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/bearFood/3.jpg",
             detail:{
@@ -41,6 +43,7 @@ module.exports={
             id:3,
             title:"秘制红烧鸡爪",
             score:"8.7",
+            collection:false,
             cooked:"19071",
             titlebg:"/images/bearFood/5.jpg",
             detail:{
@@ -60,6 +63,7 @@ module.exports={
             id:4,
             title:"顶级牛排",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/bearFood/7.jpg",
             detail:{
@@ -80,6 +84,7 @@ module.exports={
             id:5,
             title:"香辣口水鸡",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/bearFood/9.jpg",
             detail:{
@@ -103,6 +108,7 @@ module.exports={
             id:6,
             title:"蒜香炒花甲",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/bearFood/11.jpg",
             detail:{
@@ -126,6 +132,7 @@ module.exports={
             id:7,
             title:"绝味泡椒凤爪的做法",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/bearFood/13.jpg",
             detail:{
@@ -149,6 +156,7 @@ module.exports={
             id:8,
             title:"红焖猪蹄",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/bearFood/15.jpg",
             detail:{
@@ -172,6 +180,7 @@ module.exports={
             id:9,
             title:"糖醋脆皮豆腐",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/bearFood/17.jpg",
             detail:{
@@ -196,6 +205,7 @@ module.exports={
             id:10,
             title:"韩式烤五花肉",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/bearFood/19.jpg",
             detail:{

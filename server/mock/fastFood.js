@@ -6,6 +6,7 @@ module.exports={
            id:1,
             title:"比必胜客好吃太多的【海陆至尊披萨】",
             score:"8.5",
+            collection:false,
             cooked:"17240",
             titlebg:"/images/fastFood/1.jpg",
             detail:{
@@ -22,6 +23,7 @@ module.exports={
             id:2,
             title:"红烧土豆片",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/fastFood/3.jpg",
             detail:{
@@ -40,6 +42,7 @@ module.exports={
             id:3,
             title:"番茄鸡肉浓情焗饭【两人份】",
             score:"8.7",
+            collection:false,
             cooked:"19071",
             titlebg:"/images/fastFood/5.jpg",
             detail:{
@@ -59,6 +62,7 @@ module.exports={
             id:4,
             title:"番茄龙利鱼",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/fastFood/7.jpg",
             detail:{
@@ -79,6 +83,7 @@ module.exports={
             id:5,
             title:"巧克力曲奇",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/fastFood/9.jpg",
             detail:{
@@ -102,6 +107,7 @@ module.exports={
             id:6,
             title:"宫保鸡丁",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/fastFood/11.jpg",
             detail:{
@@ -125,6 +131,7 @@ module.exports={
             id:7,
             title:"葱爆面—就是汪涵在天天向上里面做的那个啦",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/fastFood/14.jpg",
             detail:{
@@ -148,6 +155,7 @@ module.exports={
             id:8,
             title:"鱼香肉丝",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/fastFood/15.jpg",
             detail:{
@@ -171,6 +179,7 @@ module.exports={
             id:9,
             title:"干锅菜花",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/fastFood/17.jpg",
             detail:{
@@ -195,6 +204,7 @@ module.exports={
             id:10,
             title:"培根卷金针菇",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/fastFood/19.jpg",
             detail:{

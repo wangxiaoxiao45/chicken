@@ -7,6 +7,7 @@ module.exports={
             id:1,
             title:"虎皮青椒",
             score:"8.1",
+            collection:false,
             cooked:"50136",
             titlebg:"/images/vegetableDish/1.jpg",
             detail:{
@@ -23,6 +24,7 @@ module.exports={
             id:2,
             title:"红烧冬瓜",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/vegetableDish/3.jpg",
             detail:{
@@ -41,6 +43,7 @@ module.exports={
             id:3,
             title:"蚝油生菜",
             score:"8.7",
+            collection:false,
             cooked:"19071",
             titlebg:"/images/vegetableDish/5.jpg",
             detail:{
@@ -60,6 +63,7 @@ module.exports={
             id:4,
             title:"手撕杏鲍菇",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/vegetableDish/7.jpg",
             detail:{
@@ -80,6 +84,7 @@ module.exports={
             id:5,
             title:"蒜蓉粉丝蒸娃娃菜",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/vegetableDish/9.jpg",
             detail:{
@@ -103,6 +108,7 @@ module.exports={
             id:6,
             title:"蛋包豆腐丁的做法",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/vegetableDish/11.jpg",
             detail:{
@@ -126,6 +132,7 @@ module.exports={
             id:7,
             title:"腊肠炒荷兰豆",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/vegetableDish/13.jpg",
             detail:{
@@ -149,6 +156,7 @@ module.exports={
             id:8,
             title:"芦笋炒蘑菇的做法",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/vegetableDish/15.jpg",
             detail:{
@@ -172,6 +180,7 @@ module.exports={
             id:9,
             title:"干煸四季豆",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/vegetableDish/17.jpg",
             detail:{
@@ -196,6 +205,7 @@ module.exports={
             id:10,
             title:"凉拌海带丝",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/vegetableDish/19.jpg",
             detail:{
