@@ -11,27 +11,14 @@ class Bazaarlist extends Component {
     componentDidMount() {
         let id = parseFloat(this.props.match.params.id);
         let _this = this;
-        if (id === 1) {
-            _this.props.getAList(0, 5, 'homedishes');
-        } else if (id === 2) {
-            _this.props.getAList(0, 5, 'fastFood');
-        } else if (id === 3) {
-            _this.props.getAList(0, 5, 'downMeal');
-        } else if (id === 4) {
-            _this.props.getAList(0, 5, 'breakFast');
-        } else if (id === 5) {
-            _this.props.getAList(0, 5, 'meat');
-        } else if (id === 6) {
-            _this.props.getAList(0, 5, 'fish');
-        } else if (id === 7) {
-            _this.props.getAList(0, 5, 'bearFood');
-        } else if (id === 8) {
-            _this.props.getAList(0, 5, 'vegetableDish');
-        } else {
-            _this.props.getAList(0, 5, 'dessert');
+        let ary = ['homedishes', 'fastFood', 'downMeal', 'breakFast', 'meat', 'fish', 'bearFood', 'vegetableDish', 'dessert'];
+
+        for (let i = 0; i < ary.length; i++) {
+            if (id === i + 1) {
+                _this.props.getAList(0, 5, ary[i]);
+            }
         }
     }
-
     render() {
         return (
             <div>
@@ -57,7 +44,7 @@ class Bazaarlist extends Component {
                                         </div>
 
                                     </div>
-                                    <i className="iconfont icon-shoucang"></i>
+                                    <i className="iconfont icon-shoucang icon-shoucang-add"></i>
 
                                 </li>
                             ))
