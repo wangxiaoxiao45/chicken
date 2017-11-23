@@ -3,7 +3,7 @@ module.exports={
     hasMore:true,
     list:[
         {
-           fastId:1,
+           id:1,
             title:"比必胜客好吃太多的【海陆至尊披萨】",
             score:"8.5",
             cooked:"17240",
@@ -19,7 +19,7 @@ module.exports={
             }
         },
         {
-            fastId:2,
+            id:2,
             title:"红烧土豆片",
             score:"8.5",
             cooked:"41474",
@@ -37,11 +37,11 @@ module.exports={
             }
         },
         {
-            fastId:3,
+            id:3,
             title:"番茄鸡肉浓情焗饭【两人份】",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/fastFood/4.jpg",
+            titlebg:"/images/fastFood/5.jpg",
             detail:{
                 detailImg:"/images/fastFood/detail/6.jpg",
                 steps: [
@@ -56,7 +56,7 @@ module.exports={
             }
         },
         {
-            fastId:4,
+            id:4,
             title:"番茄龙利鱼",
             score:"7.7",
             cooked:"16392",
@@ -76,7 +76,7 @@ module.exports={
             }
         },
         {
-            fastId:5,
+            id:5,
             title:"巧克力曲奇",
             score:"6.6",
             cooked:"13331",
@@ -99,7 +99,7 @@ module.exports={
             }
         },
         {
-            fastId:6,
+            id:6,
             title:"宫保鸡丁",
             score:"7.5",
             cooked:"24886",
@@ -122,7 +122,7 @@ module.exports={
             }
         },
         {
-            fastId:7,
+            id:7,
             title:"葱爆面—就是汪涵在天天向上里面做的那个啦",
             score:"9.5",
             cooked:"77629",
@@ -145,7 +145,7 @@ module.exports={
             }
         },
         {
-            fastId:8,
+            id:8,
             title:"鱼香肉丝",
             score:"7.3",
             cooked:"23287",
@@ -168,7 +168,7 @@ module.exports={
             }
         },
         {
-            fastId:9,
+            id:9,
             title:"干锅菜花",
             score:"8.1",
             cooked:"23287",
@@ -192,7 +192,7 @@ module.exports={
         },
 
         {
-            fastId:10,
+            id:10,
             title:"培根卷金针菇",
             score:"7.1",
             cooked:"23287",

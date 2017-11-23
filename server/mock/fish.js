@@ -3,7 +3,7 @@ module.exports={
     hasMore:true,
     list:[
         {
-            fishId:1,
+            id:1,
             title:"烤鱼",
             score:"8.1",
             cooked:"50136",
@@ -19,7 +19,7 @@ module.exports={
             }
         },
         {
-            fishId:2,
+            id:2,
             title:"剁椒鱼头",
             score:"8.5",
             cooked:"41474",
@@ -37,11 +37,11 @@ module.exports={
             }
         },
         {
-            fishId:3,
+            id:3,
             title:"清蒸老头鱼",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/fish/4.jpg",
+            titlebg:"/images/fish/5.jpg",
             detail:{
                 detailImg:"/images/fish/detail/6.jpg",
                 steps: [
@@ -56,7 +56,7 @@ module.exports={
             }
         },
         {
-            fishId:4,
+            id:4,
             title:"红烧带鱼的做法",
             score:"7.7",
             cooked:"16392",
@@ -76,7 +76,7 @@ module.exports={
             }
         },
         {
-            fishId:5,
+            id:5,
             title:"红烧鲤鱼",
             score:"6.6",
             cooked:"13331",
@@ -99,7 +99,7 @@ module.exports={
             }
         },
         {
-            fishId:6,
+            id:6,
             title:"酸菜鱼",
             score:"7.5",
             cooked:"24886",
@@ -122,7 +122,7 @@ module.exports={
             }
         },
         {
-            fishId:7,
+            id:7,
             title:"水煮鱼",
             score:"9.5",
             cooked:"77629",
@@ -145,7 +145,7 @@ module.exports={
             }
         },
         {
-            fishId:8,
+            id:8,
             title:"鲫鱼豆腐汤",
             score:"7.3",
             cooked:"23287",
@@ -168,7 +168,7 @@ module.exports={
             }
         },
         {
-            fishId:9,
+            id:9,
             title:"孔雀开屏鱼",
             score:"8.1",
             cooked:"23287",
@@ -192,7 +192,7 @@ module.exports={
         },
 
         {
-            fishId:10,
+            id:10,
             title:"糖醋鱼",
             score:"7.1",
             cooked:"23287",

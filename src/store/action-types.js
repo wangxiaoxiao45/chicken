@@ -16,3 +16,10 @@ export const DELETE_MENU='DELETE_MENU';//删除菜谱
 export const LOADING='LOADING';
 export const CLEAR='CLEAR';
 
+
+
+/*bazaar*/
+export const CLASS_IFCATION="CLASS_IFCATION";//获取菜谱分类
+
+/*bazaarlist*/
+export const GET_HOMEDISHES="GET_HOMEDISHES";//获取家常菜列表

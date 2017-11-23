@@ -4,7 +4,7 @@ module.exports={
     hasMore:true,
     list:[
         {
-            bearId:1,
+            id:1,
             title:"盐煎鸡翅",
             score:"8.1",
             cooked:"50136",
@@ -20,7 +20,7 @@ module.exports={
             }
         },
         {
-            bearId:2,
+            id:2,
             title:"麻辣香锅",
             score:"8.5",
             cooked:"41474",
@@ -38,11 +38,11 @@ module.exports={
             }
         },
         {
-            bearId:3,
+            id:3,
             title:"秘制红烧鸡爪",
             score:"8.7",
             cooked:"19071",
-            titlebg:"/images/bearFood/4.jpg",
+            titlebg:"/images/bearFood/5.jpg",
             detail:{
                 detailImg:"/images/bearFood/detail/6.jpg",
                 steps: [
@@ -57,7 +57,7 @@ module.exports={
             }
         },
         {
-            bearId:4,
+            id:4,
             title:"顶级牛排",
             score:"7.7",
             cooked:"16392",
@@ -77,7 +77,7 @@ module.exports={
             }
         },
         {
-            bearId:5,
+            id:5,
             title:"香辣口水鸡",
             score:"6.6",
             cooked:"13331",
@@ -100,7 +100,7 @@ module.exports={
             }
         },
         {
-            bearId:6,
+            id:6,
             title:"蒜香炒花甲",
             score:"7.5",
             cooked:"24886",
@@ -123,7 +123,7 @@ module.exports={
             }
         },
         {
-            bearId:7,
+            id:7,
             title:"绝味泡椒凤爪的做法",
             score:"9.5",
             cooked:"77629",
@@ -146,7 +146,7 @@ module.exports={
             }
         },
         {
-            bearId:8,
+            id:8,
             title:"红焖猪蹄",
             score:"7.3",
             cooked:"23287",
@@ -169,7 +169,7 @@ module.exports={
             }
         },
         {
-            bearId:9,
+            id:9,
             title:"糖醋脆皮豆腐",
             score:"8.1",
             cooked:"23287",
@@ -193,7 +193,7 @@ module.exports={
         },
 
         {
-            bearId:10,
+            id:10,
             title:"韩式烤五花肉",
             score:"7.1",
             cooked:"23287",
