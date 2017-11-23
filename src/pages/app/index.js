@@ -11,7 +11,7 @@ import NavBar from "../../components/nav/nav";
 import Person from "../person/person";
 import AddMenu from "../addmenu/index";
 import bazaarlist from "../bazaarlist/bazaarlist";
-
+import bazaardetail from "../bazaardetail/bazaardetail"
 
 export default class App extends React.Component{
     render(){
@@ -24,6 +24,7 @@ export default class App extends React.Component{
                    <Route path="/person" component={Person}/>
                    <Route path="/addmenu" component={AddMenu}/>
                    <Route path="/bazaarlist/:id" component={bazaarlist}/>
+                   <Route path="/bazaardetail/:id" component={bazaardetail}/>
                    <NavBar/>
                </div>
            </Router>
