@@ -295,7 +295,7 @@ app.post('/sigup',function (req, res) {
         res.json({code:1,error:'用户名已经被占用'})
     }else{
         users.push(user);
-        res.json({code:0,success:'用户注册成功'});
+        res.json({code:0,success:'用户注册成功',user});
         //如果成功了客户端要调到登录
     }
 
@@ -308,8 +308,8 @@ app.post('/login',function (req, res) {
     //在注册过的用户数组中找一找有没有对应的用户
     let oldUser=users.find((item)=>item.username==user.username&&item.password==user.password);
     if(oldUser){
-        req.session.user=user;//把登录成功对象写入session
-        res.json({code:0,success:'恭喜你登录成功',user});
+        req.session.user=oldUser;//把登录成功对象写入session
+        res.json({code:0,success:'恭喜你登录成功',oldUser});
     }else{
         res.json({code:1,error:'用户名或密码错误'})
     }

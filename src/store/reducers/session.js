@@ -3,7 +3,8 @@ import * as types from '../action-types'
 let initState={
    user:{
        username:'',
-       password:''
+       password:'',
+       nickname:''
    },
     success:null,
     error:null,

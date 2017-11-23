@@ -1,11 +1,20 @@
 import React,{Component} from 'react';
+import {connect} from 'react-redux'
+import actions from '../../store/actions/session'
 import './collect.less'
-export default class Collect extends Component{
+class Collect extends Component{
+    componentWillMount(){
+
+    }
     render(){
         return (
             <div>
-                收藏
+
             </div>
         )
     }
 }
+export default connect(
+    state=>state.session,
+    actions
+)(Collect);

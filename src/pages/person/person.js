@@ -8,6 +8,7 @@ import actions from '../../store/actions/session'
 import './person.less'
 import Top from "../../components/top/index";
 import pic from '../../static/images/picture.jpg'
+import IsLogined from "../../components/islogin/index";
 
 class Person extends Component{
     constructor(){
@@ -27,8 +28,10 @@ class Person extends Component{
         });
 
     };
+    componentWillMount(){
+
+    }
     componentDidMount(){
-        this.props.validate();
         this.props.getImg();
         let _this=this;
         this.mySwiper=new Swiper('.swiper-container', {
@@ -60,17 +63,18 @@ class Person extends Component{
             })
         }
     };
-
     render(){
         return (
             <div>
+
                 <Top titleVal="个人中心"/>
+                {this.props.user.username?null:<IsLogined hd="开始准备好好吃饭" desc="好好吃饭用心生活，比什么都幸福，保存你最喜欢的美食，分享你的三餐，关注厨房里的达人。"/>}
                 <div className="container">
                     <header className="person-header">
                         <div className="person-pro">
-                            <h4>{this.props.user.username&&this.props.user.username}</h4>
+                            <h4>{this.props.user.nickname&&this.props.user.nickname}</h4>
                             <Link to="/collect">
-                                <i className="iconfont icon-shoucang"/>
+                                <i className="iconfont icon-shoucang1"/>
                                 我的收藏
                             </Link>
                         </div>

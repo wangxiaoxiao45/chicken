@@ -1,6 +1,7 @@
 import React from 'react'
 import {HashRouter as Router,Route,Link} from 'react-router-dom'
-
+import {connect} from 'react-redux'
+import actions from '../../store/actions/session'
 import "./index.less"
 
 //引入组件
@@ -15,7 +16,12 @@ import Register from "../register/register";
 import bazaarlist from "../bazaarlist/bazaarlist";
 
 
-export default class App extends React.Component{
+
+
+ class App extends React.Component{
+     componentWillMount(){
+         this.props.validate();
+     }
     render(){
         return (
            <Router>
@@ -35,3 +41,8 @@ export default class App extends React.Component{
         )
     }
 }
+
+export default connect(
+    state=>state.session,
+    actions
+)(App);

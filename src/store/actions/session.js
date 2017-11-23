@@ -2,6 +2,7 @@ import {register,login,validate,uploadImge,getImg} from '../../api/session'
 import { Toast } from 'antd-mobile';
 import {push} from 'react-router-redux'
 export default {
+    //注册
     register(data){
         return dispatch=>{
             register(data).then(res=>{
@@ -16,6 +17,7 @@ export default {
             })
         }
     },
+    //登录
     login(data){
         return dispatch=>{
             login(data).then(res=>{
@@ -34,7 +36,9 @@ export default {
     validate(){
         return dispatch=>{
             validate().then(res=>{
-                dispatch({type:'ADD_USER',payload:res});
+                if(res.code==0){
+                    dispatch({type:'ADD_USER',payload:res});
+                }
             })
         }
     },

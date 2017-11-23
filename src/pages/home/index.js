@@ -17,7 +17,7 @@ constructor(){
     this.state={flag:true};
 }
     componentDidMount(){
-         let mySwiper =new Swiper('.swiper-container', {
+        let mySwiper =new Swiper('.swiper-container', {
              speed: 400,
              loop: true,
              autoplay: {
@@ -37,7 +37,6 @@ constructor(){
        this.setState({flag:!this.state.flag});
     }
     render(){
-        console.log('xx',this.state.list);
 
         return (
             <div className="home">

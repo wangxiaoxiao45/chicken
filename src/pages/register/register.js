@@ -12,6 +12,7 @@ class Register extends Component{
     };
     register=()=>{
         let username=this.username.value.trim(),
+            nickname=this.nickname.value.trim(),
             password=this.password.value.trim(),
             toPassword=this.toPassword.value.trim();
         if(!username){
@@ -19,6 +20,10 @@ class Register extends Component{
             return;
         }else if(!/^1\d{10}$/.test(username)){
             Toast.info('手机号输入有误',1);
+            return;
+        }
+        if(!nickname){
+            Toast.info('昵称不能为空',1);
             return;
         }
         if(!password){
@@ -32,9 +37,11 @@ class Register extends Component{
             Toast.info('再次输入密码有误',1);
             return;
         }
-
-        this.props.register({username,password});
+        this.props.register({username,password,nickname});
     };
+    componentDidMount(){
+        this.props.validate();
+    }
 
     render(){
         return (
@@ -43,6 +50,9 @@ class Register extends Component{
                 <ul>
                     <li>
                         <input type="text" maxLength="11" ref={input=>this.username=input} placeholder="手机号"/>
+                    </li>
+                    <li>
+                        <input type="text" maxLength="11" ref={input=>this.nickname=input} placeholder="昵称"/>
                     </li>
                     <li>
                        <input type="password" ref={input=>this.password=input} placeholder="密码"/>

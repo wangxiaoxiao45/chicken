@@ -38,7 +38,7 @@ class Bazaarlist extends Component {
                                     </p>
                                     <div className="bazaarkist-tg">
                                         <div className="bazaarkist-title">{item.title}</div>
-                                        <div>
+                                        <div className="bazaarkist-bot">
                                             <p>{item.score}分</p>
                                             <p>{item.cooked}人做过</p>
                                         </div>

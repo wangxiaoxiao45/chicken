@@ -13,6 +13,7 @@ class Login extends Component{
     login=()=>{
         let username=this.username.value.trim(),
             password=this.password.value.trim();
+
         if(!username){
              Toast.info('手机号不能为空',1);
              return;
@@ -29,6 +30,11 @@ class Login extends Component{
          }
         this.props.login({username,password});
     };
+    componentDidMount(){
+        this.props.validate();
+        this.username.value=this.props.user.username;
+        this.password.value=this.props.user.password;
+    }
 
     render(){
         return (
@@ -36,7 +42,7 @@ class Login extends Component{
                 <LoginHeader titleVal="登录" history={this.props.history}/>
                 <ul>
                     <li>
-                        <input type="text" maxLength="11" ref={input=>this.username=input} placeholder="手机号"/>
+                        <input type="text"  maxLength="11" ref={input=>this.username=input} placeholder="手机号"/>
                     </li>
                     <li>
                         <input type="password" ref={input=>this.password=input} placeholder="密码"/>
