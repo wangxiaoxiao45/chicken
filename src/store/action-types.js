@@ -23,3 +23,8 @@ export const CLASS_IFCATION="CLASS_IFCATION";//获取菜谱分类
 
 /*bazaarlist*/
 export const GET_HOMEDISHES="GET_HOMEDISHES";//获取家常菜列表
+export const CHANGECOLOR="CHANGECOLOR";//改变收藏颜色
+
+/*收藏*/
+export const ADD_COLLECT="ADD_COLLECT";//添加收藏
+export const DEL_COLLECT="DEL_COLLECT";//删除收藏

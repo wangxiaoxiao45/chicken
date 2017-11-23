@@ -5,10 +5,14 @@ import {connect} from 'react-redux';
 import '../../common/css/index.less'
 
 class Bazaarlist extends Component {
+
     handleDetail=(id)=>{
         console.log(id);
     };
+
+
     componentDidMount() {
+
         let id = parseFloat(this.props.match.params.id);
         let _this = this;
         let ary = ['homedishes', 'fastFood', 'downMeal', 'breakFast', 'meat', 'fish', 'bearFood', 'vegetableDish', 'dessert'];
@@ -18,8 +22,10 @@ class Bazaarlist extends Component {
                 _this.props.getAList(0, 5, ary[i]);
             }
         }
+
     }
     render() {
+
         return (
             <div>
                 <div className="bazaarlist-head">
@@ -31,6 +37,7 @@ class Bazaarlist extends Component {
                     <div className="bazaarkist-con">
                         {
                             this.props.list.map((item, index) => (
+
                                 <li key={index} onClick={()=>this.handleDetail(item.id)}>
 
                                     <p>
@@ -44,7 +51,17 @@ class Bazaarlist extends Component {
                                         </div>
 
                                     </div>
-                                    <i className="iconfont icon-shoucang icon-shoucang-add"></i>
+
+
+                                        <i className={ this.props.list[index].collection?"iconfont icon-shoucang1 icon-shoucang-add":"iconfont icon-shoucang icon-shoucang-add"} onClick={()=>{this.props.changeColor(item.id);
+                                        if(!this.props.list[index].collection){
+                                            this.props.addCollect(item);
+                                        }
+
+                                        }}></i>
+
+
+
 
                                 </li>
                             ))
