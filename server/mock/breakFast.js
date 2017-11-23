@@ -3,9 +3,10 @@ module.exports={
     hasMore:true,
     list:[
         {
-            breakId:1,
+            id:1,
             title:"十分美味的酥皮泡芙",
             score:"8.5",
+            collection:false,
             cooked:"17240",
             titlebg:"/images/breakFast/1.jpg",
             detail:{
@@ -19,13 +20,14 @@ module.exports={
             }
         },
         {
-            breakId:2,
+            id:2,
             title:"发面大馒头",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/breakFast/3.jpg",
             detail:{
-                detailImg:"/images/breakFast/detail/3.jpg",
+                detailImg:"/images/breakFast/detail/4.jpg",
                 steps: [
                     {title:"步骤1", content:"猪小排冼净，晾干水份备用"},
                     {title:"步骤2", content:"锅内倒少量油，烧热之后，爆香姜片"},
@@ -37,11 +39,12 @@ module.exports={
             }
         },
         {
-            breakId:3,
+            id:3,
             title:"鸡蛋饼",
             score:"8.7",
+            collection:false,
             cooked:"19071",
-            titlebg:"/images/breakFast/4.jpg",
+            titlebg:"/images/breakFast/5.jpg",
             detail:{
                 detailImg:"/images/breakFast/detail/6.jpg",
                 steps: [
@@ -56,9 +59,10 @@ module.exports={
             }
         },
         {
-            breakId:4,
+            id:4,
             title:"好吃到流泪的奥利奥咸奶油盒子蛋糕的做法",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/breakFast/7.jpg",
             detail:{
@@ -76,9 +80,10 @@ module.exports={
             }
         },
         {
-            breakId:5,
+            id:5,
             title:"皮蛋瘦肉粥",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/breakFast/9.jpg",
             detail:{
@@ -99,9 +104,10 @@ module.exports={
             }
         },
         {
-            breakId:6,
+            id:6,
             title:"火腿双加",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/breakFast/11.jpg",
             detail:{
@@ -122,9 +128,10 @@ module.exports={
             }
         },
         {
-            breakId:7,
+            id:7,
             title:"十分周就能做好的双皮奶",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/breakFast/14.jpg",
             detail:{
@@ -145,9 +152,10 @@ module.exports={
             }
         },
         {
-            breakId:8,
+            id:8,
             title:"绣球馒头",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/breakFast/15.jpg",
             detail:{
@@ -168,9 +176,10 @@ module.exports={
             }
         },
         {
-            breakId:9,
+            id:9,
             title:"淡奶油软面包的做法",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/breakFast/17.jpg",
             detail:{
@@ -192,9 +201,10 @@ module.exports={
         },
 
         {
-            breakId:10,
+            id:10,
             title:"肠仔包---QQ软软的早餐包的做法",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/breakFast/19.jpg",
             detail:{

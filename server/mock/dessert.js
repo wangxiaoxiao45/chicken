@@ -4,11 +4,12 @@ module.exports={
     hasMore:true,
     list:[
         {
-            dessertId:1,
+            id:1,
             title:"6寸戚风蛋糕（2蛋）的做法",
             score:"8.1",
+            collection:false,
             cooked:"50136",
-            titlebg:"/images//1.jpg",
+            titlebg:"/images/dessert/1.jpg",
             detail:{
                 detailImg:"/images/dessert/detail/2.jpg",
                 steps: [
@@ -20,9 +21,10 @@ module.exports={
             }
         },
         {
-            dessertId:2,
+            id:2,
             title:"泡芙",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/dessert/3.jpg",
             detail:{
@@ -38,11 +40,12 @@ module.exports={
             }
         },
         {
-            dessertId:3,
+            id:3,
             title:"黄油曲奇",
             score:"8.7",
+            collection:false,
             cooked:"19071",
-            titlebg:"/images/dessert/4.jpg",
+            titlebg:"/images/dessert/5.jpg",
             detail:{
                 detailImg:"/images/dessert/detail/6.jpg",
                 steps: [
@@ -57,9 +60,10 @@ module.exports={
             }
         },
         {
-            dessertId:4,
+            id:4,
             title:"自制哈根达斯风味的冰淇淋的做法",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/dessert/7.jpg",
             detail:{
@@ -77,9 +81,10 @@ module.exports={
             }
         },
         {
-            dessertId:5,
+            id:5,
             title:"芒果西米露的做法",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/dessert/9.jpg",
             detail:{
@@ -100,9 +105,10 @@ module.exports={
             }
         },
         {
-            dessertId:6,
+            id:6,
             title:"焦糖奶茶的做法",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/dessert/11.jpg",
             detail:{
@@ -123,9 +129,10 @@ module.exports={
             }
         },
         {
-            dessertId:7,
+            id:7,
             title:"蔓越莓曲奇",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/dessert/13.jpg",
             detail:{
@@ -146,9 +153,10 @@ module.exports={
             }
         },
         {
-            dessertId:8,
+            id:8,
             title:"冻酸奶芝士蛋糕",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/dessert/15.jpg",
             detail:{
@@ -169,9 +177,10 @@ module.exports={
             }
         },
         {
-            dessertId:9,
+            id:9,
             title:"布朗尼（Moist and Nutty Browines）",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/dessert/17.jpg",
             detail:{
@@ -193,9 +202,10 @@ module.exports={
         },
 
         {
-            dessertId:10,
+            id:10,
             title:"椰蓉开口酥",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/dessert/19.jpg",
             detail:{

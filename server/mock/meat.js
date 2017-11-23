@@ -3,9 +3,10 @@ module.exports={
     hasMore:true,
     list:[
         {
-            meatId:1,
+            id:1,
             title:"可乐鸡翅",
             score:"8.1",
+            collection:false,
             cooked:"50136",
             titlebg:"/images/meat/1.jpg",
             detail:{
@@ -19,9 +20,10 @@ module.exports={
             }
         },
         {
-            meatId:2,
+            id:2,
             title:"肉末蒸豆腐的做法",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/meat/3.jpg",
             detail:{
@@ -37,11 +39,12 @@ module.exports={
             }
         },
         {
-            meatId:3,
+            id:3,
             title:"蜜汁叉烧肉",
             score:"8.7",
+            collection:false,
             cooked:"19071",
-            titlebg:"/images/meat/4.jpg",
+            titlebg:"/images/meat/5.jpg",
             detail:{
                 detailImg:"/images/meat/detail/6.jpg",
                 steps: [
@@ -56,9 +59,10 @@ module.exports={
             }
         },
         {
-            meatId:4,
+            id:4,
             title:"苏式鲜肉月饼",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/meat/7.jpg",
             detail:{
@@ -76,9 +80,10 @@ module.exports={
             }
         },
         {
-            meatId:5,
+            id:5,
             title:"台式卤肉饭",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/meat/9.jpg",
             detail:{
@@ -99,9 +104,10 @@ module.exports={
             }
         },
         {
-            meatId:6,
+            id:6,
             title:"洋葱炒肉的做法",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/meat/11.jpg",
             detail:{
@@ -122,9 +128,10 @@ module.exports={
             }
         },
         {
-            meatId:7,
+            id:7,
             title:"小炒肉",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/meat/13.jpg",
             detail:{
@@ -145,9 +152,10 @@ module.exports={
             }
         },
         {
-            meatId:8,
+            id:8,
             title:"松软多汁的肉包子",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/meat/15.jpg",
             detail:{
@@ -168,9 +176,10 @@ module.exports={
             }
         },
         {
-            meatId:9,
+            id:9,
             title:"肉酿虎皮青椒的做法",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/meat/17.jpg",
             detail:{
@@ -192,9 +201,10 @@ module.exports={
         },
 
         {
-            meatId:10,
+            id:10,
             title:"美味家常木须肉的做法",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/meat/19.jpg",
             detail:{

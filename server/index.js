@@ -81,16 +81,18 @@ app.get('/menuClassification',function (req, res) {
 
 //获取家常菜的列表
 app.get('/homedishes',function (req, res) {
+
     let {offset,limit}=req.query;
     console.log(offset, limit);
     let homeList=[];
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         homeList.push(homedishes.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        homedishes.hasMore=false;
+        hasMore=homedishes.hasMore=false;
     }
-    res.json(homeList);
+    res.json({list:homeList,hasMore});
 });
 
 
@@ -111,10 +113,11 @@ app.get('/fastFood',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         fastList.push(fastFood.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        fastFood.hasMore=false;
+        hasMore=fastFood.hasMore=false;
     }
-    res.json(fastList);
+    res.json({list:fastList,hasMore});
 });
 
 //获取快手菜详情页
@@ -132,10 +135,11 @@ app.get('/downMeal',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         downList.push(downMeal.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        downMeal.hasMore=false;
+        hasMore=downMeal.hasMore=false;
     }
-    res.json(downList);
+    res.json({list:downList,hasMore});
 });
 
 
@@ -154,10 +158,11 @@ app.get('/breakFast',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         breakList.push(breakFast.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        breakFast.hasMore=false;
+        hasMore=breakFast.hasMore=false;
     }
-    res.json(breakList);
+    res.json({list:breakList,hasMore});
 });
 
 //获取早餐菜详情页
@@ -175,10 +180,11 @@ app.get('/meat',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         meatList.push(meat.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        meat.hasMore=false;
+        hasMore=meat.hasMore=false;
     }
-    res.json(meatList);
+    res.json({list:meatList,hasMore});
 });
 
 //获取肉类菜详情页
@@ -196,10 +202,11 @@ app.get('/fish',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         fishList.push(fish.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        fish.hasMore=false;
+        hasMore=fish.hasMore=false;
     }
-    res.json(fishList);
+    res.json({list:fishList,hasMore});
 });
 
 //获取鱼类菜详情页
@@ -217,10 +224,11 @@ app.get('/bearFood',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         bearList.push(bearFood.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        bearFood.hasMore=false;
+        hasMore=bearFood.hasMore=false;
     }
-    res.json(bearList);
+    res.json({list:bearList,hasMore});
 });
 
 //获取下酒菜类菜详情页
@@ -238,10 +246,11 @@ app.get('/vegetableDish',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         vegetableList.push(vegetableDish.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
-        vegetableDish.hasMore=false;
+        hasMore=vegetableDish.hasMore=false;
     }
-    res.json(vegetableList);
+    res.json({list:vegetableList,hasMore});
 });
 
 //获取素类菜详情页
@@ -259,10 +268,11 @@ app.get('/dessert',function (req, res) {
     for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
         dessertList.push(dessert.list[i]);
     }
+    let hasMore=true;
     if(offset==5){
         dessert.hasMore=false;
     }
-    res.json(dessertList);
+    res.json({list:dessertList,hasMore});
 });
 
 //获取素类菜详情页

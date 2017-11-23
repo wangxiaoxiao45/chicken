@@ -3,9 +3,10 @@ module.exports={
     hasMore:true,
     list:[
         {
-            downId:1,
+            id:1,
             title:"阿婆手撕包菜",
             score:"8.5",
+            collection:false,
             cooked:"17240",
             titlebg:"/images/downMeal/1.jpg",
             detail:{
@@ -19,9 +20,10 @@ module.exports={
             }
         },
         {
-            downId:2,
+            id:2,
             title:"啤酒鸭",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/downMeal/3.jpg",
             detail:{
@@ -37,11 +39,12 @@ module.exports={
             }
         },
         {
-            downId:3,
+            id:3,
             title:"菠萝咕噜肉的做法",
             score:"8.7",
+            collection:false,
             cooked:"19071",
-            titlebg:"/images/downMeal/4.jpg",
+            titlebg:"/images/downMeal/5.jpg",
             detail:{
                 detailImg:"/images/downMeal/detail/6.jpg",
                 steps: [
@@ -56,9 +59,10 @@ module.exports={
             }
         },
         {
-            downId:4,
+            id:4,
             title:"茄子豆角",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/downMeal/7.jpg",
             detail:{
@@ -76,9 +80,10 @@ module.exports={
             }
         },
         {
-            downId:5,
+            id:5,
             title:"超下饭的肉末茄子",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/downMeal/9.jpg",
             detail:{
@@ -99,9 +104,10 @@ module.exports={
             }
         },
         {
-            downId:6,
+            id:6,
             title:"酸汤肥牛",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/downMeal/11.jpg",
             detail:{
@@ -122,9 +128,10 @@ module.exports={
             }
         },
         {
-            downId:7,
+            id:7,
             title:"剁椒金针菇的做法",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/downMeal/14.jpg",
             detail:{
@@ -145,9 +152,10 @@ module.exports={
             }
         },
         {
-            downId:8,
+            id:8,
             title:"销魂烤茄子，百吃不厌！海氏烤箱定制的做法",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/downMeal/15.jpg",
             detail:{
@@ -168,9 +176,10 @@ module.exports={
             }
         },
         {
-            downId:9,
+            id:9,
             title:"一个话唠包教包会的香浓红烩牛腩的做法",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/downMeal/17.jpg",
             detail:{
@@ -192,9 +201,10 @@ module.exports={
         },
 
         {
-            downId:10,
+            id:10,
             title:"酸辣粉",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/downMeal/19.jpg",
             detail:{
