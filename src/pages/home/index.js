@@ -138,7 +138,7 @@ constructor(){
 
                         <ReactIScroll iScroll={iScroll}
                                       options={{mouseWheel: false,  scrollX: true,momentum:true,freeScroll: true,disablePointer: true,disableTouch:false,disableMouse:false}}>
-                            <div style={{width:'250%'}}>
+                            <div style={{width:'210%'}}>
                                 <ul>
                                     {
                                         this.props.first.list.map((item,index)=>(
