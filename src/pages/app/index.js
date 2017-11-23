@@ -14,7 +14,7 @@ import AddMenu from "../addmenu/index";
 import Login from "../login/login";
 import Register from "../register/register";
 import bazaarlist from "../bazaarlist/bazaarlist";
-
+import bazaardetail from "../bazaardetail/bazaardetail"
 
 
 
@@ -34,6 +34,7 @@ import bazaarlist from "../bazaarlist/bazaarlist";
                    <Route path="/login" component={Login}/>
                    <Route path="/register" component={Register}/>
                    <Route path="/bazaarlist/:id" component={bazaarlist}/>
+                   <Route path="/bazaardetail/:id" component={bazaardetail}/>
                    <NavBar/>
                </div>
            </Router>

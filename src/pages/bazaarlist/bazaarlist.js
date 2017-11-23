@@ -8,6 +8,10 @@ class Bazaarlist extends Component {
     handleDetail=(id)=>{
         console.log(id);
     };
+    handleDl=(e)=>{
+        e.stopPropagation();
+        console.log(333);
+    };
     componentDidMount() {
         let id = parseFloat(this.props.match.params.id);
         let _this = this;
@@ -20,6 +24,7 @@ class Bazaarlist extends Component {
         }
     }
     render() {
+        // console.log(this.props.list);
         return (
             <div>
                 <div className="bazaarlist-head">
@@ -31,7 +36,7 @@ class Bazaarlist extends Component {
                     <div className="bazaarkist-con">
                         {
                             this.props.list.map((item, index) => (
-                                <li key={index} onClick={()=>this.handleDetail(item.id)}>
+                                <Link to={`/bazaardetail/${item.id}`}  key={index} onClick={()=>this.handleDetail(item.id)}>
 
                                     <p>
                                         <img src={item.titlebg} alt=""/>
@@ -44,9 +49,9 @@ class Bazaarlist extends Component {
                                         </div>
 
                                     </div>
-                                    <i className="iconfont icon-shoucang icon-shoucang-add"></i>
+                                    <i className="iconfont icon-shoucang icon-shoucang-add" onClick={(e)=>this.handleDl(e)}></i>
 
-                                </li>
+                                </Link>
                             ))
                         }
                     </div>
