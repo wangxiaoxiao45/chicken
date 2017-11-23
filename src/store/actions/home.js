@@ -12,14 +12,10 @@ export default {
     },
     downRefresh(){
         return (dispatch)=>{
-
-
                 dispatch({type:types.CLEAR});
                 setTimeout(function () {
                     dispatch({type:types.GETSTATE,payload:get('/indexdata')});
                 },1000);
-
-
         }
     },
 

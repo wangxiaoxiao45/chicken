@@ -26,7 +26,9 @@ let initState={
         }
     ],
     tips:'',
-    exclusive:false
+    exclusive:false,
+    picture:null,
+    time:null
 };
 
 export default function (state=initState,action){
@@ -76,7 +78,7 @@ export default function (state=initState,action){
                 ...state,exclusive:action.payload
             };
         case types.DELETE_MENU: //删除菜单
-            return initState
+            return initState;
         default:
         return state;
     }

@@ -129,7 +129,6 @@ export default class Step extends Component{
 
     render(){
         let list= this.state.step;
-        console.log(list);
         return (
             <div className="menu-step">
                 <div className="menu-step-hd">

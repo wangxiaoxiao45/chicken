@@ -5,7 +5,7 @@ const alert = Modal.alert;
  * @param percent  压缩比例 0~1
  * @param callback  回调函数
  */
-
+//压缩图片
 export function compressImage (url,percent,callback){
     let cvs = document.createElement('canvas');
     let ctx = cvs.getContext('2d');
@@ -22,8 +22,6 @@ export function compressImage (url,percent,callback){
     }
 }
 
-
-
 //弹出提示
 export function showAlert(del,val){
     const alertInstance = alert('', val, [
@@ -34,7 +32,26 @@ export function showAlert(del,val){
         console.log('auto close');
         alertInstance.close();
     }, 500000);
-};
+}
+
+//时间格式化
+export function format(date,fmt){
+    var o = {
+        "M+": date.getMonth() + 1, //月份
+        "d+": date.getDate(), //日
+        "h+": date.getHours(), //小时
+        "m+": date.getMinutes(), //分
+        "s+": date.getSeconds(), //秒
+        "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+        "S": date.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+//console.log(new Date().Format("yyyy-MM-dd"));
+
 
 //上拉刷新
 export function downRefresh(element,callback){

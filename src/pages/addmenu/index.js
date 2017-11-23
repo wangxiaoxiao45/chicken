@@ -1,21 +1,18 @@
 import React,{Component} from 'react';
 import { Switch,List,Toast } from 'antd-mobile';
-import {push} from 'react-router-redux'
 import {connect} from 'react-redux'
 
 import actions from '../../store/actions/addmenu.js'
 import {get,post} from '../../api/index'
-
+import {format} from '../../utils'
 
 import Top from "../../components/top/index";
-
-import './index.less'
 import Food from "./food/food";
 import MenuCover from "./menuCover/menuCover";
 import Editable from "../../components/editable/index";
 import Step from "./step/step";
 
-
+import './index.less'
 
 class AddMenu extends Component{
     constructor(){
@@ -88,15 +85,24 @@ class AddMenu extends Component{
             "step":step,
             "tips":props.tips,
             "exclusive":props.exclusive,
+            "picture":this.state.picture,
+            "time":format(new Date, 'yyyy-MM-dd')
         }).then((res)=>{
            if(res.success==='ok'){
                Toast.info('提交成功',1,()=>{
                    this.props.successMenu();
                });
-
            }
         });
     };
+
+    componentDidMount(){
+        get("/getImg").then(res=>{
+           this.setState({
+               picture:res.upImg
+           })
+        });
+    }
 
     render(){
         return (

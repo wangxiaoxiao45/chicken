@@ -1,11 +1,20 @@
 const express=require("express");
 const bodyParser=require("body-parser");
 const fs=require("fs");
-const path=require('path');
+const path=require("path");
+const session=require("express-session");
 const app=new express();
 
 
 app.use(express.static(path.resolve('./mock')));
+//app.use(express.static(path.resolve('./img')));
+
+app.use(session({
+    resave:true,
+    saveUninitialized:true,
+    secret:'jiami'
+}));
+
 //导入数据
 let menuClassification=require('./mock/menuClassification');//导入菜品分类
 let homedishes=require('./mock/homeDishes');//导入家常菜列表
@@ -19,11 +28,6 @@ let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
 let dessert=require('./mock/dessert');//导入饮品列表
 let indexData=require('./mock/indexData');
 
-
-
-let regBase64=/^data:image\/\w+;base64,/;  //匹配base64
-
-app.use(express.static("img"));
 
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(function(req,res,next){
@@ -39,25 +43,23 @@ app.use(function(req,res,next){
     }
 });
 
-//接收图片 写入图片
-app.post("/upimage",(req,res)=>{
-    let base64=req.body.src.replace(regBase64,'');
-    let newJPG=new Buffer(base64, 'base64');
-
-    fs.writeFile("./img/1.jpg",newJPG,function(err){//用fs写入文件
-        if(err){
-            console.log(err);
-        }else{
-            console.log('写入成功！');
-        }
-    })
+let upImg=null; //存储头像
+//上传头像
+app.post("/uploadImge",(req,res)=>{
+    upImg=req.body;
+    if(upImg.upImg){
+        res.json({code:0,...upImg});
+    }else{
+        res.json({code:1});
+    }
+});
+//读取头像
+app.get("/getImg",(req,res)=>{
+    if(upImg){
+        res.json(upImg);
+    }
 });
 
-//读取图片
-app.get("/getimage",(req,res)=>{
-    console.log(req.headers);
-    res.json({src:"http://"+req.headers.host+"/1.jpg"});
-});
 
 //获取菜谱
 app.post("/addmenu",(req,res)=>{
@@ -274,8 +276,11 @@ app.get('/dessert/:dessertId',function (req, res) {
 //注册接口
 let users=[];
 app.post('/sigup',function (req, res) {
+
     let user=req.body;
+
     let oldUser=users.find(item=>item.username==user.username);
+
     if(oldUser){
         res.json({code:1,error:'用户名已经被占用'})
     }else{
@@ -294,7 +299,7 @@ app.post('/login',function (req, res) {
     let oldUser=users.find((item)=>item.username==user.username&&item.password==user.password);
     if(oldUser){
         req.session.user=user;//把登录成功对象写入session
-        res.json({code:0,success:'恭喜你登录成功'});
+        res.json({code:0,success:'恭喜你登录成功',user});
     }else{
         res.json({code:1,error:'用户名或密码错误'})
     }

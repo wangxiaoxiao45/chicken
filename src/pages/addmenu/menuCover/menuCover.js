@@ -12,8 +12,8 @@ export default class MenuCover extends Component{
     uploadImage=(e,num)=>{
         let target=e.target;
         if(!target.value) return;
-
         let imageSrc=URL.createObjectURL(target.files[0]);
+        console.log(imageSrc);
 
         compressImage(imageSrc,.9,(img)=>{
 

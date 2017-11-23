@@ -1,19 +1,18 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom'
 import Swiper from 'swiper'
+import {connect} from 'react-redux'
 import {compressImage} from '../../utils'
-
-import {get,post} from '../../api/index'
+import actions from '../../store/actions/session'
 
 import './person.less'
 import Top from "../../components/top/index";
+import pic from '../../static/images/picture.jpg'
 
-
-
-export default class Person extends Component{
+class Person extends Component{
     constructor(){
         super();
-        this.state={current:1,imgSrc:require("../../static/personImage/picture.jpg")};
+        this.state={current:1};
     }
     //上传图片
     changeImage=(e)=>{
@@ -22,23 +21,15 @@ export default class Person extends Component{
 
         let imageSrc=URL.createObjectURL(target.files[0]);
         compressImage(imageSrc,0.6,(img)=>{
-          this.setState({
-              imgSrc:img
-          });
-          post('/upimage',{
-              src:img
-          });
+          this.props.uploadImge({upImg:img});
           //释放内存
             URL.revokeObjectURL(imageSrc);
         });
 
     };
     componentDidMount(){
-        get("/getimage").then((res)=>{
-            this.setState({
-                imgSrc:res.src
-            });
-        });
+        this.props.validate();
+        this.props.getImg();
         let _this=this;
         this.mySwiper=new Swiper('.swiper-container', {
             pagination: {
@@ -77,14 +68,14 @@ export default class Person extends Component{
                 <div className="container">
                     <header className="person-header">
                         <div className="person-pro">
-                            <h4>用户名</h4>
+                            <h4>{this.props.user.username&&this.props.user.username}</h4>
                             <Link to="/collect">
                                 <i className="iconfont icon-shoucang"/>
                                 我的收藏
                             </Link>
                         </div>
                         <div className="up-image">
-                            <img src={this.state.imgSrc} ref={img=>this.imgEle=img} alt=""/>
+                            <img src={this.props.upImg||pic} alt=""/>
                             <input type="file" className="upFile" onChange={this.changeImage}/>
                         </div>
                     </header>
@@ -113,3 +104,8 @@ export default class Person extends Component{
         )
     }
 }
+
+export default connect(
+    state=>state.session,
+    actions
+)(Person);

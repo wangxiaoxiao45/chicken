@@ -13,6 +13,10 @@ export const MENU_TIPS='MENU_TIPS';//小贴士
 export const MENU_EXCLUSIVE='MENU_EXCLUSIVE';//小贴士
 export const DELETE_MENU='DELETE_MENU';//删除菜谱
 
+/*sesson*/
+export const ADD_USER='ADD_USER';//用户信息
+export const UPLOAD_IMG='UPLOAD_IMG'; //上传图片
+
 export const LOADING='LOADING';
 export const CLEAR='CLEAR';
 

@@ -10,6 +10,8 @@ import Collect from "../collect/collect";
 import NavBar from "../../components/nav/nav";
 import Person from "../person/person";
 import AddMenu from "../addmenu/index";
+import Login from "../login/login";
+import Register from "../register/register";
 
 
 export default class App extends React.Component{
@@ -22,6 +24,8 @@ export default class App extends React.Component{
                    <Route path="/collect" component={Collect}/>
                    <Route path="/person" component={Person}/>
                    <Route path="/addmenu" component={AddMenu}/>
+                   <Route path="/login" component={Login}/>
+                   <Route path="/register" component={Register}/>
                    <NavBar/>
                </div>
            </Router>
