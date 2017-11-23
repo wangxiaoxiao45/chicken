@@ -6,6 +6,7 @@ module.exports={
             id:1,
             title:"可乐鸡翅",
             score:"8.1",
+            collection:false,
             cooked:"50136",
             titlebg:"/images/homeDishes/1.jpg",
             detail:{
@@ -22,6 +23,7 @@ module.exports={
             id:2,
             title:"懒人版糖醋排骨",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/homeDishes/3.jpg",
             detail:{
@@ -40,6 +42,7 @@ module.exports={
             id:3,
             title:"油焖大虾",
             score:"8.7",
+            collection:false,
             cooked:"19071",
             titlebg:"/images/homeDishes/5.jpg",
             detail:{
@@ -59,6 +62,7 @@ module.exports={
             id:4,
             title:"麻婆豆腐",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/homeDishes/7.jpg",
             detail:{
@@ -79,6 +83,7 @@ module.exports={
             id:5,
             title:"吃着碗里的看着锅里的红烧肉",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/homeDishes/9.jpg",
             detail:{
@@ -102,6 +107,7 @@ module.exports={
             id:6,
             title:"酸辣土豆丝",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/homeDishes/11.jpg",
             detail:{
@@ -125,6 +131,7 @@ module.exports={
             id:7,
             title:"大盘鸡",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/homeDishes/19.jpg",
             detail:{
@@ -148,6 +155,7 @@ module.exports={
             id:8,
             title:"鱼香肉丝",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/homeDishes/13.jpg",
             detail:{
@@ -171,6 +179,7 @@ module.exports={
             id:9,
             title:"干锅菜花",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/homeDishes/15.jpg",
             detail:{
@@ -195,6 +204,7 @@ module.exports={
             id:10,
             title:"培根卷金针菇",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/homeDishes/17.jpg",
             detail:{

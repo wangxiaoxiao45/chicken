@@ -6,6 +6,7 @@ module.exports={
             id:1,
             title:"烤鱼",
             score:"8.1",
+            collection:false,
             cooked:"50136",
             titlebg:"/images/fish/1.jpg",
             detail:{
@@ -22,6 +23,7 @@ module.exports={
             id:2,
             title:"剁椒鱼头",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/fish/3.jpg",
             detail:{
@@ -40,6 +42,7 @@ module.exports={
             id:3,
             title:"清蒸老头鱼",
             score:"8.7",
+            collection:false,
             cooked:"19071",
             titlebg:"/images/fish/5.jpg",
             detail:{
@@ -59,6 +62,7 @@ module.exports={
             id:4,
             title:"红烧带鱼的做法",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/fish/7.jpg",
             detail:{
@@ -79,6 +83,7 @@ module.exports={
             id:5,
             title:"红烧鲤鱼",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/fish/9.jpg",
             detail:{
@@ -102,6 +107,7 @@ module.exports={
             id:6,
             title:"酸菜鱼",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/fish/11.jpg",
             detail:{
@@ -125,6 +131,7 @@ module.exports={
             id:7,
             title:"水煮鱼",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/fish/13.jpg",
             detail:{
@@ -148,6 +155,7 @@ module.exports={
             id:8,
             title:"鲫鱼豆腐汤",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/fish/15.jpg",
             detail:{
@@ -171,6 +179,7 @@ module.exports={
             id:9,
             title:"孔雀开屏鱼",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/fish/17.jpg",
             detail:{
@@ -195,6 +204,7 @@ module.exports={
             id:10,
             title:"糖醋鱼",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/fish/19.jpg",
             detail:{

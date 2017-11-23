@@ -55,8 +55,9 @@ class Bazaarlist extends Component {
                                             <p>{item.score}分</p>
                                             <p>{item.cooked}人做过</p>
                                         </div>
-                                        <i className="iconfont icon-shoucang"></i>
+
                                     </div>
+                                    <i className="iconfont icon-shoucang"></i>
 
                                 </li>
                             ))

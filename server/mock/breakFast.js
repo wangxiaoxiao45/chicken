@@ -6,6 +6,7 @@ module.exports={
             id:1,
             title:"十分美味的酥皮泡芙",
             score:"8.5",
+            collection:false,
             cooked:"17240",
             titlebg:"/images/breakFast/1.jpg",
             detail:{
@@ -22,6 +23,7 @@ module.exports={
             id:2,
             title:"发面大馒头",
             score:"8.5",
+            collection:false,
             cooked:"41474",
             titlebg:"/images/breakFast/3.jpg",
             detail:{
@@ -40,6 +42,7 @@ module.exports={
             id:3,
             title:"鸡蛋饼",
             score:"8.7",
+            collection:false,
             cooked:"19071",
             titlebg:"/images/breakFast/5.jpg",
             detail:{
@@ -59,6 +62,7 @@ module.exports={
             id:4,
             title:"好吃到流泪的奥利奥咸奶油盒子蛋糕的做法",
             score:"7.7",
+            collection:false,
             cooked:"16392",
             titlebg:"/images/breakFast/7.jpg",
             detail:{
@@ -79,6 +83,7 @@ module.exports={
             id:5,
             title:"皮蛋瘦肉粥",
             score:"6.6",
+            collection:false,
             cooked:"13331",
             titlebg:"/images/breakFast/9.jpg",
             detail:{
@@ -102,6 +107,7 @@ module.exports={
             id:6,
             title:"火腿双加",
             score:"7.5",
+            collection:false,
             cooked:"24886",
             titlebg:"/images/breakFast/11.jpg",
             detail:{
@@ -125,6 +131,7 @@ module.exports={
             id:7,
             title:"十分周就能做好的双皮奶",
             score:"9.5",
+            collection:false,
             cooked:"77629",
             titlebg:"/images/breakFast/14.jpg",
             detail:{
@@ -148,6 +155,7 @@ module.exports={
             id:8,
             title:"绣球馒头",
             score:"7.3",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/breakFast/15.jpg",
             detail:{
@@ -171,6 +179,7 @@ module.exports={
             id:9,
             title:"淡奶油软面包的做法",
             score:"8.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/breakFast/17.jpg",
             detail:{
@@ -195,6 +204,7 @@ module.exports={
             id:10,
             title:"肠仔包---QQ软软的早餐包的做法",
             score:"7.1",
+            collection:false,
             cooked:"23287",
             titlebg:"/images/breakFast/19.jpg",
             detail:{
