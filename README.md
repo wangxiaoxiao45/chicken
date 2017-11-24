@@ -25,3 +25,13 @@
 `Warning: A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.`
 - 添加菜谱页面起先没用redux 最后提交整合数据发现特别麻烦，后来改用redux
 
+### 如何运行
+> - 下载项目   **git clone https://github.com/wxxfe/chicken.git**
+> - 打开一个终端，进入到**chicken目录** 安装依赖包
+>  `npm install`
+>  如果失败，尝试用`yarn install`
+> - 启动后台服务  `node server/index`
+> - 启动前端开发服务 `npm run dev`
+> 启动后会自动打开网址 http://localhost:8080/#/
+
+

@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import '../bazaarlist/bazaarlist.less'
+import './collect.less'
 import actions from '../../store/actions/session'
 import {Link} from 'react-router-dom';
 import IsLogined from "../../components/islogin/index";
@@ -28,6 +29,10 @@ class Collect extends Component{
         return (
             <div className="collect">
                 {
+                    !this.props.collect.list.length&&<img src={require('./img/jjj.png')} className="bg" alt=""/>
+                }
+
+                {
                     this.props.session.user.username?<div className="bazaarlist-head">
                         <span className="iconfont icon-fanhui" onClick={()=>this.props.history.goBack()}></span>
                         <div className="top-input">
@@ -51,6 +56,7 @@ class Collect extends Component{
                                         <div className="bazaarkist-bot">
                                             <p>{item.score}分</p>
                                             <p>{item.cooked}人做过</p>
+                                            <span onClick={(e)=>{e.preventDefault();this.props.removeCollect(item)}}>取消收藏</span>
                                         </div>
 
                                     </div>

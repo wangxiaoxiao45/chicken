@@ -1,6 +1,7 @@
 import {register,login,validate,uploadImge,getImg,userAddMenu,userQuit} from '../../api/session'
 import { Toast } from 'antd-mobile';
 import {push} from 'react-router-redux'
+import * as types from '../action-types'
 export default {
     //注册
     register(data){
@@ -74,18 +75,24 @@ export default {
             })
         }
     },
+
     //退出
     userQuit(data){
-        return dispatch=>{
-            userQuit(data).then(res=>{
-                if(res.code==0){
+        return dispatch => {
+            userQuit(data).then(res => {
+                if (res.code == 0) {
                     dispatch({
-                        type:'USER_QUIT'
+                        type: 'USER_QUIT'
                     });
-                    Toast.info(res.success,1);
+                    Toast.info(res.success, 1);
                 }
             })
         }
+    },
+    removeCollect(item){
+        return {
+            type:types.DEL_COLLECT,
+            payload:item
+        }
     }
-
 }
