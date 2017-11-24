@@ -22,8 +22,8 @@ class Bazaardetail extends Component {
                             <img src={current.detail.detailImg} />
                             <div className="bazaardetail-detail-title">{current.title}</div>
                             <div className="bazaardetail-score">
-                                <span>{current.score}综合评分 · </span>
-                                <span>{current.cooked}3人最近7天做过</span>
+                                <span>综合评分：<i>{current.score}</i> </span>
+                                <span><i>{current.cooked}</i>人最近7天做过</span>
                             </div>
                             <div className="bazaardetail-stypes">
                                 {

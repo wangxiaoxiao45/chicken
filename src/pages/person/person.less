@@ -113,8 +113,12 @@
 .person-list{
   padding:.3rem 0;
   li{
-    padding:0 .3rem .2rem;
-    border-bottom:1px solid #f3f3f3;
+    margin: 0 0 .15rem;
+    padding: .35rem .4rem 0;
+    border-top:1px solid #f3f3f3;
+    &:nth-of-type(1){
+      border-top:none;
+    }
   }
   a{
     display: block;
@@ -129,15 +133,20 @@
   }
   .person-mes-tt{
     h4{
+      display:block;
       padding-top:.2rem;
       line-height:.4rem;
-      font-size:.3rem;
+      font-size:.28rem;
       color:#555;
+      text-align: left;
     }
     p{
       line-height:.4rem;
       color:rgb(149,149,143);
       font-size:.2rem;
+      span{
+        color:rgb(111,189,83);
+      }
     }
   }
   .person-mes-p{

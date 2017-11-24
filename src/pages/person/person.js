@@ -115,7 +115,7 @@ class Person extends Component{
                                                         <h4>
                                                             {item.title}
                                                         </h4>
-                                                        <p>{item.cooked}人做过</p>
+                                                        <p><span>{item.cooked}</span>人做过</p>
                                                     </div>
                                                     <div className="person-mes-p">
                                                         <img src={this.props.session.upImg||pic} alt=""/>

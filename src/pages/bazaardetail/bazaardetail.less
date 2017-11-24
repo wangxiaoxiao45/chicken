@@ -19,33 +19,56 @@
   }
 }
 .bazaardetail-detail-title{
-  min-height: 0.7rem;
   text-align: center;
-  font-size: 0.4rem;
+  font-size: .32rem;
+  font-weight: bold;
   box-sizing: border-box;
-  padding: 0 .3rem;
-  margin-top: .25rem;
+  padding: 0 .3rem .1rem;
+  margin-top: .7rem;
+  color:#555;
 }
 .bazaardetail-score{
   text-align:center;
  color:#777;
   margin: 0 .3rem;
-  min-height:.7rem;
-  border-bottom:1px solid #ccc;
+  padding-bottom:.8rem;
+  border-bottom:1px solid #ebebeb;
+  i{font-style:normal;}
+  span{
+    font-size:.2rem;
+    padding:0 .2rem;
+    &:nth-of-type(1){
+      i{
+        color:rgb(250,102,80);
+      }
+    }
+    &:nth-of-type(2){
+      i{
+        color:rgb(111,189,83);
+      }
+    }
+  }
 
 }
 .bazaardetail-stypes{
   padding: 0 .3rem;
   box-sizing: border-box;
   .bazaardetail-stypes-item{
-    border-bottom:1px solid #ccc;
+    border-bottom:1px solid #ebebeb;
+    padding: .1rem .2rem;
+    img{
+      width:100%;
+      margin:.3rem 0;
+    }
     p:nth-child(1){
       margin: .1rem 0 .1rem;
+      font-size:.27rem;
     }
     p:nth-child(2){
       color:#777;
-      font-size:.25rem;
+      font-size:.23rem;
       margin-bottom:.1rem;
+      line-height:.35rem;
     }
   }
 }
