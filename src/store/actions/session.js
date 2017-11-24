@@ -1,6 +1,7 @@
 import {register,login,validate,uploadImge,getImg,userAddMenu} from '../../api/session'
 import { Toast } from 'antd-mobile';
 import {push} from 'react-router-redux'
+import * as types from '../action-types'
 export default {
     //注册
     register(data){
@@ -73,6 +74,13 @@ export default {
 
             })
         }
+    },
+    removeCollect(item){
+        return {
+            type:types.DEL_COLLECT,
+            payload:item
+        }
     }
+
 
 }
