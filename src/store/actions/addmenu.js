@@ -19,10 +19,10 @@ export default {
             payload:title
         }
     },
-    menuCateStoryFn(detail){
+    menuCateStoryFn(content){
         return {
             type:types.MENU_CATE_STORE,
-            payload:detail
+            payload:content
         }
     },
     addMaterialFn(material){

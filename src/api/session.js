@@ -26,3 +26,8 @@ export function getImg(){
 export function sendMenu(data){
     return post("/uploadImge",data)
 }
+
+/*获取新添菜谱*/
+export function userAddMenu(){
+    return get("/useraddmenu");
+}
