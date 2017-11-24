@@ -108,7 +108,7 @@ class Person extends Component{
                                 <ul className="person-list">
                                     {data.length>0&&data.map((item,index)=>(
                                         <li key={index}>
-                                            <a href="">
+                                            <Link to={`/bazaardetail/${item.id}`}  key={index}>
                                                 <div>
                                                     <img src={item.titlebg} alt=""/>
                                                 </div>
@@ -124,7 +124,7 @@ class Person extends Component{
                                                         <span>{this.props.session.user.nickname&&this.props.session.user.nickname}</span>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
