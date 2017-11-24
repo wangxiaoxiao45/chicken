@@ -5,6 +5,7 @@ import addmenu from './addmenu'
 import session from './session'
 import bazaar from './bazaar'
 import bazaarlist from './bazaarlist'
+import collect from './collect'
 
 export default combineReducers({
     home,
@@ -12,5 +13,6 @@ export default combineReducers({
     session,
     bazaar,
     bazaarlist,
+    collect,
     router:routerReducer
 })

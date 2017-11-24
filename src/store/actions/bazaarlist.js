@@ -13,6 +13,19 @@ export default {
                 )
             })
         }
+    },
+    changeColor(id){
+        return {
+            type:types.CHANGECOLOR,
+            payload:id
+        }
+    },
+    addCollect(item){
+        return {
+            type:types.ADD_COLLECT,
+            payload:item
+        }
     }
+
 
 }
