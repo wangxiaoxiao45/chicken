@@ -40,7 +40,9 @@ class Person extends Component{
                 data:res
             });
         });
-        this.props.getImg();
+        if(this.props.session.user.nickname){
+            this.props.getImg();
+        }
         let _this=this;
         this.mySwiper=new Swiper('.swiper-container', {
             pagination: {

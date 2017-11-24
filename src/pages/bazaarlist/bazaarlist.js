@@ -35,8 +35,10 @@ class Bazaarlist extends Component {
             <div>
                 <div className="bazaarlist-head">
                     <span className="iconfont icon-fanhui" onClick={()=>this.props.history.goBack()}></span>
-                    <i className="iconfont icon-fangdajing"></i>
-                    <input type="text" placeholder="搜索美味佳肴"/>
+                    <div className="top-input">
+                        <i className="iconfont icon-fangdajing"></i>
+                        <input type="text" placeholder="搜索美味佳肴"/>
+                    </div>
                 </div>
                 <div className="container" style={{"marginTop": "20px"}}>
                     <div className="bazaarkist-con">
