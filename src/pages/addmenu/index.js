@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Switch,List,Toast } from 'antd-mobile';
+import { Switch,List,Toast,Picker,PickerView} from 'antd-mobile';
 import {connect} from 'react-redux'
 
 import actions from '../../store/actions/addmenu.js'
@@ -13,7 +13,7 @@ import Editable from "../../components/editable/index";
 import Step from "./step/step";
 
 import './index.less'
-
+import seasons from './data'
 class AddMenu extends Component{
     constructor(){
         super();
@@ -21,7 +21,8 @@ class AddMenu extends Component{
             menuTitle:'',
             isChecked:false,
             show:false,
-            isShowNext:true
+            isShowNext:true,
+            classify:''
         }
     }
     show=(isShow)=>{
@@ -56,7 +57,7 @@ class AddMenu extends Component{
     //提交
     bindleSubmit=()=>{
         let props=this.props;
-       if(!props.menuCover){
+        if(!props.menuCover){
            Toast.info('菜谱封面图片不能为空',1);
            return;
        }
@@ -75,17 +76,23 @@ class AddMenu extends Component{
         }
 
         let foodMaterials=props.foodMaterials.filter(item=>item.material!==''||item.num!=='');
-        let step=props.step.filter(item=>item.img!==''||item.detail!=='');
-
+        let step=props.step.filter(item=>item.img!==''||item.content!=='');
+        console.log(step);
         post('/addmenu',{
-            "menuCover":props.menuCover,
-            "menuTitle":props.menuTitle,
+            "title":props.menuTitle,
+            "score":0,
+            "collection":false,
+            "cooked":Math.floor(Math.random()*1000),
+         /*   "titlebg":props.menuCover,*/
+            "detail":{
+                "detailImg":props.menuCover,
+                "step":step
+            },
             "menuCateStory":props.menuCateStory,
             "foodMaterials":foodMaterials,
-            "step":step,
             "tips":props.tips,
             "exclusive":props.exclusive,
-            "picture":this.state.picture,
+            "classify":this.state.classify[0],
             "time":format(new Date, 'yyyy-MM-dd')
         }).then((res)=>{
            if(res.success==='ok'){
@@ -95,13 +102,7 @@ class AddMenu extends Component{
            }
         });
     };
-
     componentDidMount(){
-        get("/getImg").then(res=>{
-           this.setState({
-               picture:res.upImg
-           })
-        });
     }
 
     render(){
@@ -127,6 +128,17 @@ class AddMenu extends Component{
                                 </div>
                                 <div className="menu-bottom">
                                     <div className="menu-bottom-dj">
+                                        <Picker
+                                            data={seasons}
+                                            title="选择菜谱归类"
+                                            cascade={false}
+                                            extra="请选择(可选)"
+                                            value={this.state.sValue}
+                                            onChange={v => this.setState({ classify: v })}
+                                            onOk={v => this.setState({ sValue: v })}
+                                        >
+                                            <List.Item arrow="horizontal">菜谱归类</List.Item>
+                                        </Picker>
                                         <List.Item
                                             extra={<Switch
                                                 checked={this.state.isChecked}
@@ -146,6 +158,7 @@ class AddMenu extends Component{
             </div>
         )
     }
+
 }
 
 export default connect(

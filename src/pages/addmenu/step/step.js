@@ -9,8 +9,8 @@ export default class Step extends Component{
         this.state={
             step:[
                 {
-                    img:'',
-                    detail:''
+                    content:'',
+                    img:''
                 }
             ],
             del:false,
@@ -22,11 +22,11 @@ export default class Step extends Component{
         this.setState({
             step:this.state.step.map((item,index)=>{
                 let img=item.img;
-                let detail=item.detail;
+                let content=item.content;
                 if(index==num){
                     return {
                         img:imgSrc,
-                        detail
+                        content
                     }
                 }
                 return item;
@@ -40,11 +40,11 @@ export default class Step extends Component{
         this.setState({
             step:this.state.step.map((item,index)=>{
                 let img=item.img;
-                let detail=item.detail;
+                let content=item.content;
                 if(index==num){
                     return {
                         img,
-                        detail:val
+                        content:val
                     }
                 }
                 return item;
@@ -59,11 +59,11 @@ export default class Step extends Component{
         this.setState({
             step:this.state.step.map((item,index)=>{
                 let img=item.img;
-                let detail=item.detail;
+                let content=item.content;
                 if(index==num){
                     return {
                         img:'',
-                        detail
+                        content
                     }
                 }
                 return item;
@@ -75,29 +75,37 @@ export default class Step extends Component{
     //添加单个步骤
     addSignle=()=>{
         this.setState({
-            step:[...this.state.step,{img:'',detail:''}]
+            step:[...this.state.step,{img:'',content:''}]
         },function(){
-            this.props.addStepFn({img:'',detail:''});
+            this.props.addStepFn({img:'',content:''});
         });
     };
     //批量添加步骤
     batchUp=(e)=>{
         let target=e.target;
         if(!target.value) return;
+        this.setState({
+            step:this.state.step.filter((item,index)=>item.img!==''||item.content!=='')
+        },function(){
+            [...target.files].map((item,index)=>{
+                let imageSrc=URL.createObjectURL(item);
+                compressImage(imageSrc,.9,(img)=>{
 
-        [...target.files].map((item,index)=>{
-            let imageSrc=URL.createObjectURL(item);
-            compressImage(imageSrc,.9,(img)=>{
+                    this.setState({
+                        step:[...this.state.step,{img:img,content:''}],
+                        setImg:img
+                    },function(){
+                        this.props.changeStepImgFn(this.state.step);
+                    });
 
-                this.setState({
-                    step:[...this.state.step,{img:img,detail:''}],
-                    setImg:img
+                    //释放内存
+                    URL.revokeObjectURL(imageSrc);
                 });
+            })
+        });
 
-                //释放内存
-                URL.revokeObjectURL(imageSrc);
-            });
-        })
+
+
 
     };
     //显示删除按钮
@@ -109,11 +117,13 @@ export default class Step extends Component{
     //删除
     del=(e,num)=>{
         showAlert(()=>{
+
             this.setState({
                 step:this.state.step.filter((item,index)=>{
                     return index!==num;
                 })
             },function () {
+
                 this.props.changeStepImgFn(this.state.step);
             });
 
@@ -146,7 +156,7 @@ export default class Step extends Component{
                                 {this.state.del?<i className="iconfont icon-shanchu" onClick={(e)=>this.del(e,index)}/>:null}
                                 <MenuCover menuCover={item.img} menuCoverFn={this.props.addStep} index={index} addPicFn={this.addPicFn} removePicFn={this.removeImg} describe="+步骤图"/>
                             </div>
-                            <Editable titleVal="添加步骤说明"  menuCateStoryFn={this.changeVal} story={item.detail} index={index} />
+                            <Editable titleVal="添加步骤说明"  menuCateStoryFn={this.changeVal} story={item.content} index={index} />
                         </li>
                     )):null}
                 </ul>

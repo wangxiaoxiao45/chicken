@@ -7,8 +7,11 @@ const app=new express();
 
 
 app.use(express.static(path.resolve('./mock')));
-//app.use(express.static(path.resolve('./img')));
+app.use(express.static(path.resolve('./img')));
 
+
+let a=require("./mock/addmenu.json");
+console.log(a);
 app.use(session({
     resave:true,
     saveUninitialized:true,
@@ -43,6 +46,17 @@ app.use(function(req,res,next){
     }
 });
 
+
+//异步写文件
+function writeFileFn(name,data,callback){
+    fs.writeFile(name,data,callback);
+}
+
+//异步读文件
+function readFileFn(name,callback) {
+    fs.readFile(name,'utf8',callback);
+}
+
 let upImg=null; //存储头像
 //上传头像
 app.post("/uploadImge",(req,res)=>{
@@ -60,12 +74,72 @@ app.get("/getImg",(req,res)=>{
     }
 });
 
+//处理base64图片
+let reg=/^data:image\/\w+;base64,/;
+function changeToJpg(imgData){
+   let base64Data=imgData.replace(reg, ""),
+       dataBuffer = new Buffer(base64Data, 'base64'),
+       name='../img/'+Math.floor(Math.random()*9000000+1000000)+'.jpg';  //生成一个随机数 做图片的名字并存放到img文件夹下
 
-//获取菜谱
+    writeFileFn(name,dataBuffer,(err)=>{
+        if(err){
+            throw err;
+        }
+    });
+
+    return name;
+}
+
+
+//获取菜谱 存入数据
 app.post("/addmenu",(req,res)=>{
-    console.log(req.body);
+    let mes=req.body;
+
+    //把base64图片转成jpg并保存到step里
+    mes.detail.step=mes.detail.step.map((item,index)=>{
+        let img=item.img;
+        item.title=`步骤${index+1}`;
+        if(img.length){
+            item.img=changeToJpg(img);
+        }
+        return item;
+    });
+    //detailImg base64图片转化为jpg
+    mes.detail.detailImg=changeToJpg(mes.detail.detailImg);
+    mes.titlebg=mes.detail.detailImg;  //共用同一张图片
+
+    //对转化的图片按title排序
+    mes.detail.step.sort(function(a,b){
+        return a.title.localeCompare(b.title);
+    });
+
+    readFileFn('./mock/addmenu.json',function(err,data){
+        if(err) return;
+
+        let menuData=JSON.parse(data);
+        console.log(JSON.parse(data));
+        mes.id=menuData.length+1;
+        menuData.push(mes);
+        writeFileFn('./mock/addmenu.json',JSON.stringify(menuData),(err)=>{
+            if(err){
+                throw err;
+            }
+        })
+
+    });
+
     res.json({success:"ok"});
 });
+
+//添加的菜谱返回给用户
+app.get("/useraddmenu",function(req,res){
+    readFileFn('./mock/addmenu.json',function(err,data){
+        if(err) return;
+        res.json({code:0,data:JSON.parse(data).reverse()});
+    });
+
+});
+
 
 
 //获取首页数据

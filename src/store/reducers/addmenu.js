@@ -4,30 +4,31 @@ import * as types from '../action-types'
  * @param menuTitle  标题
  * @param menuCateStory  美食故事
  * @param foodMaterials[{material,num}]  食材  material 材料  num 材料数量
- * @param step[{img,detail}]  步骤  img 路径  base64  detail 描述
+ * @param step[{img,content}]  步骤  img 路径  base64  content 描述
  * @param tips  小贴士
  * @param exclusive  独家发布
  *
  */
 let initState={
-    menuCover:'',
-    menuTitle:'',
-    menuCateStory:'',
+    menuCover:"",
+    menuTitle:"",
+    menuCateStory:"",
     foodMaterials:[
         {
-            material:'',
-            num:''
+            material:"",
+            num:""
         }
     ],
     step:[
         {
-            img:'',
-            detail:''
+            img:"",
+            content:""
         }
     ],
-    tips:'',
+    tips:"",
     exclusive:false,
-    picture:null,
+    classify:null,
+    picture:"",
     time:null
 };
 

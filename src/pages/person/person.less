@@ -10,7 +10,18 @@
   h4{
     color:rgb(56,56,49);
     font-size:.38rem;
-    line-height:.6rem;
+    line-height:.4rem;
+    .quit{
+      display:inline-block;
+      line-height:.4rem;
+      margin:0 0 0 .3rem;
+      padding:0.01rem .2rem;
+      border-radius:.1rem;
+      font-size:.22rem;
+      font-weight: normal;
+      color:#fff;
+      background: #ffa497;
+    }
   }
   a{
     display: block;
@@ -98,4 +109,51 @@
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
     top:0;
     bottom:auto;
+}
+.person-list{
+  padding:.3rem 0;
+  li{
+    padding:0 .3rem .2rem;
+    border-bottom:1px solid #f3f3f3;
+  }
+  a{
+    display: block;
+  }
+  img{
+    height:3rem;
+    width:100%;
+  }
+  .person-mes{
+    display:flex;
+    justify-content: space-between;
+  }
+  .person-mes-tt{
+    h4{
+      padding-top:.2rem;
+      line-height:.4rem;
+      font-size:.3rem;
+      color:#555;
+    }
+    p{
+      line-height:.4rem;
+      color:rgb(149,149,143);
+      font-size:.2rem;
+    }
+  }
+  .person-mes-p{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    img{
+      width:.7rem;
+      height:.7rem;
+      border-radius: 50%;
+    }
+    span{
+      color:#999;
+      line-height:.4rem;
+      font-size:.2rem;
+    }
+  }
 }

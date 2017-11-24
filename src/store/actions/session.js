@@ -1,4 +1,4 @@
-import {register,login,validate,uploadImge,getImg} from '../../api/session'
+import {register,login,validate,uploadImge,getImg,userAddMenu} from '../../api/session'
 import { Toast } from 'antd-mobile';
 import {push} from 'react-router-redux'
 export default {
@@ -59,5 +59,20 @@ export default {
                 dispatch({type:'UPLOAD_IMG',payload:res.upImg});
             });
         }
+    },
+    // 获取创建的菜谱
+    userAddMenu(){
+        return dispatch=>{
+            userAddMenu().then(res=>{
+                if(res.code==0){
+                    dispatch({
+                        type:'USER_ADD_MENU',
+                        payload:res.data
+                    })
+                }
+
+            })
+        }
     }
+
 }
