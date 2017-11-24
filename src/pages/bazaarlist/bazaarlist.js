@@ -6,13 +6,15 @@ import '../../common/css/index.less'
 
 class Bazaarlist extends Component {
 
-    handleDetail=(id)=>{
-        console.log(id);
-    };
+    handleDl=(e,item,index)=>{
+        e.preventDefault();
 
-    handleDl=(e)=>{
-        e.stopPropagation();
         console.log(333);
+        this.props.changeColor(item.id);
+        if(!this.props.list[index].collection){
+            this.props.addCollect(item);
+        }
+
     };
 
     componentDidMount() {
@@ -41,7 +43,7 @@ class Bazaarlist extends Component {
                         {
                             this.props.list.map((item, index) => (
 
-                                <Link to={`/bazaardetail/${item.id}`}  key={index} onClick={()=>this.handleDetail(item.id)}>
+                                <Link to={`/bazaardetail/${item.id}`}  key={index}>
 
 
                                     <p>
@@ -57,12 +59,7 @@ class Bazaarlist extends Component {
                                     </div>
 
 
-                                        <i className={ this.props.list[index].collection?"iconfont icon-shoucang1 icon-shoucang-add":"iconfont icon-shoucang icon-shoucang-add"} onClick={(e)=>{this.handleDl(e);this.props.changeColor(item.id);
-                                        if(!this.props.list[index].collection){
-                                            this.props.addCollect(item);
-                                        }
-
-                                        }}/>
+                                        <i className={ this.props.list[index].collection?"iconfont icon-shoucang1 icon-shoucang-add":"iconfont icon-shoucang icon-shoucang-add"} onClick={(e)=>{this.handleDl(e,item,index);}}/>
 
 
 

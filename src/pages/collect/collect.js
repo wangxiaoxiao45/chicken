@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
-import './collect.less'
+import '../bazaarlist/bazaarlist.less'
 import actions from '../../store/actions/session'
+import {Link} from 'react-router-dom';
 
 
 
@@ -35,7 +36,7 @@ class Collect extends Component{
                         {
                             queryList.map((item, index) => (
 
-                                <li key={index} onClick={()=>this.handleDetail(item.id)}>
+                                <Link to={`/bazaardetail/${item.id}`} key={index}>
 
                                     <p>
                                         <img src={item.titlebg} alt=""/>
@@ -50,7 +51,7 @@ class Collect extends Component{
                                     </div>
 
 
-                                </li>
+                                </Link>
                             ))
                         }
                     </div>
@@ -61,6 +62,6 @@ class Collect extends Component{
 }
 export default connect(
 
-    state,
+    state=>state,
     actions
 )(Collect);
