@@ -11,7 +11,7 @@ class Bazaarlist extends Component {
 
         console.log(333);
         this.props.changeColor(item.id);
-        if(!this.props.list[index].collection){
+        if(!this.props.bazaarlist.list[index].collection){
             this.props.addCollect(item);
         }
 
@@ -43,10 +43,9 @@ class Bazaarlist extends Component {
                 <div className="container" style={{"marginTop": "20px"}}>
                     <div className="bazaarkist-con">
                         {
-                            this.props.list.map((item, index) => (
+                            this.props.bazaarlist.list.map((item, index) => (
 
                                 <Link to={`/bazaardetail/${item.id}`}  key={index}>
-
 
                                     <p>
                                         <img src={item.titlebg} alt=""/>
@@ -61,10 +60,7 @@ class Bazaarlist extends Component {
                                     </div>
 
 
-                                        <i className={ this.props.list[index].collection?"iconfont icon-shoucang1 icon-shoucang-add":"iconfont icon-shoucang icon-shoucang-add"} onClick={(e)=>{this.handleDl(e,item,index);}}/>
-
-
-
+                                    {this.props.session.user.username?<i className={ this.props.bazaarlist.list[index].collection?"iconfont icon-shoucang1 icon-shoucang-add":"iconfont icon-shoucang icon-shoucang-add"} onClick={(e)=>{this.handleDl(e,item,index);}}/>:null}
 
                                 </Link>
                             ))
@@ -76,4 +72,4 @@ class Bazaarlist extends Component {
     }
 }
 import './bazaarlist.less'
-export default  connect(state => state.bazaarlist, actions)(Bazaarlist);
+export default  connect(state => state, actions)(Bazaarlist);

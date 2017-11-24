@@ -234,7 +234,6 @@ constructor(){
                 </div>
 
                 </div>
-
         )
     }
 }

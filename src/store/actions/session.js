@@ -1,4 +1,4 @@
-import {register,login,validate,uploadImge,getImg,userAddMenu} from '../../api/session'
+import {register,login,validate,uploadImge,getImg,userAddMenu,userQuit} from '../../api/session'
 import { Toast } from 'antd-mobile';
 import {push} from 'react-router-redux'
 export default {
@@ -68,9 +68,22 @@ export default {
                     dispatch({
                         type:'USER_ADD_MENU',
                         payload:res.data
-                    })
+                    });
                 }
 
+            })
+        }
+    },
+    //退出
+    userQuit(data){
+        return dispatch=>{
+            userQuit(data).then(res=>{
+                if(res.code==0){
+                    dispatch({
+                        type:'USER_QUIT'
+                    });
+                    Toast.info(res.success,1);
+                }
             })
         }
     }

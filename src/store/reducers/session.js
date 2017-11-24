@@ -17,5 +17,8 @@ export default function (state=initState,action){
     if(action.type==='UPLOAD_IMG'){
         return {...state,upImg:action.payload}
     }
+    if(action.type==="USER_QUIT"){
+        return {...state,user:{username:'',password:'',nickname:''}}
+    }
     return state;
 }

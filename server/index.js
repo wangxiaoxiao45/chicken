@@ -10,8 +10,6 @@ app.use(express.static(path.resolve('./mock')));
 app.use(express.static(path.resolve('./img')));
 
 
-let a=require("./mock/addmenu.json");
-console.log(a);
 app.use(session({
     resave:true,
     saveUninitialized:true,
@@ -30,6 +28,8 @@ let bearFood=require('./mock/bearFood');//导入下酒菜列表
 let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
 let dessert=require('./mock/dessert');//导入饮品列表
 let indexData=require('./mock/indexData');//首页数据
+
+let addMenu=require('./mock/addmenu.json'); //读取个人中心上传的菜单
 
 
 app.use(bodyParser.json({limit:'5mb'}));
@@ -112,24 +112,65 @@ app.post("/addmenu",(req,res)=>{
     mes.detail.step.sort(function(a,b){
         return a.title.localeCompare(b.title);
     });
+    totalAddList(addMenu,mes,'./mock/addmenu.json');
 
-    readFileFn('./mock/addmenu.json',function(err,data){
-        if(err) return;
-
-        let menuData=JSON.parse(data);
-        console.log(JSON.parse(data));
-        mes.id=menuData.length+1;
-        menuData.push(mes);
-        writeFileFn('./mock/addmenu.json',JSON.stringify(menuData),(err)=>{
-            if(err){
-                throw err;
-            }
-        })
-
-    });
+    //插入到对应到菜谱中
+    insertMenu(mes);
 
     res.json({success:"ok"});
 });
+
+//写入到个人中心菜谱列表
+function totalAddList(oldList,newObj,fileName){
+    if(Array.isArray(oldList)){
+        newObj.id=oldList.length?oldList[oldList.length-1].id+1:1;
+        oldList.push(newObj);
+    }else{
+        newObj.id=oldList.list.length?oldList.list[oldList.list.length-1].id+1:1;
+        oldList.list.push(newObj);
+    }
+
+    writeFileFn(fileName,JSON.stringify(oldList),(err)=>{
+        if(err){
+            throw err;
+        }
+    })
+}
+
+//根据传递的classify选项不同 插入到不同的菜单中
+function insertMenu(menuName){
+    switch (menuName.classify){
+        case '':
+        case '家常菜':
+            totalAddList(homedishes,menuName,'./mock/homeDishes.json');
+            break;
+        case '快手菜':
+            totalAddList(fastFood,menuName,'./mock/downMeal.json');
+            break;
+        case '下饭菜':
+            totalAddList(downMeal,menuName,'./mock/downMeal.json');
+            break;
+        case '早餐':
+            totalAddList(breakFast,menuName,'./mock/breakFast.json');
+            break;
+        case '肉类':
+            totalAddList(meat,menuName,'./mock/meat.json');
+            break;
+        case '鱼类':
+            totalAddList(fish,menuName,'./mock/fish.json');
+            break;
+        case '下酒菜':
+            totalAddList(bearFood,menuName,'./mock/bearFood.json');
+            break;
+        case '素菜':
+            totalAddList(vegetableDish,menuName,'./mock/vegetableDish.json');
+            break;
+        case '饮品':
+            totalAddList(dessert,menuName,'./mock/dessert.json');
+            break;
+    }
+}
+
 
 //添加的菜谱返回给用户
 app.get("/useraddmenu",function(req,res){
@@ -382,7 +423,7 @@ app.post('/login',function (req, res) {
     let oldUser=users.find((item)=>item.username==user.username&&item.password==user.password);
     if(oldUser){
         req.session.user=oldUser;//把登录成功对象写入session
-        res.json({code:0,success:'恭喜你登录成功',oldUser});
+        res.json({code:0,success:'恭喜你登录成功',user:{username:oldUser.username,nickname:oldUser.nickname}});
     }else{
         res.json({code:1,error:'用户名或密码错误'})
     }
@@ -398,6 +439,13 @@ app.get('/validate',function(req,res){
     }
 });
 
+//账号退出
+app.post("/userquit",function(req,res){
+   if(req.body.quit==='ok'){
+       res.json({code:0,success:"退出成功"});
+       req.session.destroy();
+   }
+});
 
 const port=8887;
 app.listen(port,function () {

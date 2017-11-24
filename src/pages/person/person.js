@@ -82,7 +82,7 @@ class Person extends Component{
                 <div className="container">
                     <header className="person-header">
                         <div className="person-pro">
-                            <h4>{this.props.session.user.nickname&&this.props.session.user.nickname}<span className="quit">退出</span></h4>
+                            <h4>{this.props.session.user.nickname&&this.props.session.user.nickname}<span className="quit" onClick={()=>this.props.userQuit({quit:"ok"})}>退出</span></h4>
                             <Link to="/collect">
                                 <i className="iconfont icon-shoucang1"/>
                                 我的收藏

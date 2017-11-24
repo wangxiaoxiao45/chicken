@@ -31,3 +31,8 @@ export function sendMenu(data){
 export function userAddMenu(){
     return get("/useraddmenu");
 }
+
+/*退出*/
+export function userQuit(data){
+    return post("/userquit",data);
+}

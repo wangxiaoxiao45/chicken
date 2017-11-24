@@ -92,7 +92,7 @@ class AddMenu extends Component{
             "foodMaterials":foodMaterials,
             "tips":props.tips,
             "exclusive":props.exclusive,
-            "classify":this.state.classify[0],
+            "classify":this.state.classify[0]||'',
             "time":format(new Date, 'yyyy-MM-dd')
         }).then((res)=>{
            if(res.success==='ok'){

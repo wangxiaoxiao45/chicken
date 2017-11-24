@@ -19,6 +19,7 @@ export const UPLOAD_IMG='UPLOAD_IMG'; //上传图片
 
 /*person*/
 export const USER_ADD_MENU='USER_ADD_MENU';
+export const USER_QUIT='USER_QUIT';
 
 
 export const LOADING='LOADING';
