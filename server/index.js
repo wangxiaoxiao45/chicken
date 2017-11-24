@@ -26,7 +26,7 @@ let fish=require('./mock/fish');//导入鱼类列表
 let bearFood=require('./mock/bearFood');//导入下酒菜列表
 let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
 let dessert=require('./mock/dessert');//导入饮品列表
-let indexData=require('./mock/indexData');
+let indexData=require('./mock/indexData');//首页数据
 
 
 app.use(bodyParser.json({limit:'5mb'}));
