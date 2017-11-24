@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import '../bazaarlist/bazaarlist.less'
 import actions from '../../store/actions/session'
 import {Link} from 'react-router-dom';
+import IsLogined from "../../components/islogin/index";
 
 
 
@@ -31,6 +32,7 @@ class Collect extends Component{
                     <i className="iconfont icon-fangdajing"></i>
                     <input type="text" placeholder="搜索美味佳肴" onChange={this.handle} value={this.state.text}/>
                 </div>
+                {this.props.session.user.username?null:<IsLogined hd="开始准备好好吃饭" desc="好好吃饭用心生活，比什么都幸福，保存你最喜欢的美食，分享你的三餐，关注厨房里的达人。"/>}
                 <div className="container" style={{"marginTop": "20px"}}>
                     <div className="bazaarkist-con">
                         {
@@ -43,7 +45,7 @@ class Collect extends Component{
                                     </p>
                                     <div className="bazaarkist-tg">
                                         <div className="bazaarkist-title">{item.title}</div>
-                                        <div>
+                                        <div className="bazaarkist-bot">
                                             <p>{item.score}分</p>
                                             <p>{item.cooked}人做过</p>
                                         </div>
