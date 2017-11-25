@@ -77,9 +77,9 @@ app.get("/getImg",(req,res)=>{
 //处理base64图片
 let reg=/^data:image\/\w+;base64,/;
 function changeToJpg(imgData){
-   let base64Data=imgData.replace(reg, ""),
-       dataBuffer = new Buffer(base64Data, 'base64'),
-       name='../img/'+Math.floor(Math.random()*9000000+1000000)+'.jpg';  //生成一个随机数 做图片的名字并存放到img文件夹下
+    let base64Data=imgData.replace(reg, ""),
+        dataBuffer = new Buffer(base64Data, 'base64'),
+        name='../img/'+Math.floor(Math.random()*9000000+1000000)+'.jpg';  //生成一个随机数 做图片的名字并存放到img文件夹下
 
     writeFileFn(name,dataBuffer,(err)=>{
         if(err){
@@ -178,6 +178,18 @@ app.get("/useraddmenu",function(req,res){
         res.json({code:0,data:JSON.parse(data).reverse()});
     });
 
+});
+
+
+//获取个人中心列表点击跳转详情信息
+app.post("/useraddmenulist",function(req,res){
+    let id=req.body.id;
+    readFileFn('./mock/addmenu.json',function(err,data){
+        if(err) return;
+
+        let item=JSON.parse(data).filter((cur,index)=>index+1==id);
+        res.json({lists:item[0]});
+    });
 });
 
 //获取首页数据
@@ -475,10 +487,10 @@ app.get('/validate',function(req,res){
 
 //账号退出
 app.post("/userquit",function(req,res){
-   if(req.body.quit==='ok'){
-       res.json({code:0,success:"退出成功"});
-       req.session.destroy();
-   }
+    if(req.body.quit==='ok'){
+        res.json({code:0,success:"退出成功"});
+        req.session.destroy();
+    }
 });
 
 const port=8887;

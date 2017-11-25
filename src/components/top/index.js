@@ -7,7 +7,7 @@ export default class Top extends Component{
     render(){
         return (
             <div className="top">
-                <span className={this.props.toBack==='取消'?'active':''} onClick={()=>{this.props.history.goBack()}}>{this.props.toBack||''}</span>{this.props.titleVal}<span className={this.props.colorActive?'active':''} onClick={this.show}>{this.props.toGo||''}</span>
+                <span className={this.props.toBack==='取消'?'active':''} onClick={()=>{this.props.del();}}>{this.props.toBack||''}</span>{this.props.titleVal}<span className={this.props.colorActive?'active':''} onClick={this.show}>{this.props.toGo||''}</span>
             </div>
         )
     }

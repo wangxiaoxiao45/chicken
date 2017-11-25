@@ -15,7 +15,7 @@ import Login from "../login/login";
 import Register from "../register/register";
 import bazaarlist from "../bazaarlist/bazaarlist";
 import bazaardetail from "../bazaardetail/bazaardetail"
-
+import addmenudetail from '../addmenudetail/addmenudetail.js'
 
 
  class App extends React.Component{
@@ -35,6 +35,7 @@ import bazaardetail from "../bazaardetail/bazaardetail"
                    <Route path="/register" component={Register}/>
                    <Route path="/bazaarlist/:id" component={bazaarlist}/>
                    <Route path="/bazaardetail/:id" component={bazaardetail}/>
+                   <Route path="/addmenudetail/:id" component={addmenudetail}/>
                    <NavBar/>
                </div>
            </Router>
