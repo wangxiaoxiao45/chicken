@@ -123,7 +123,7 @@ app.post("/addmenu",(req,res)=>{
 //写入到个人中心菜谱列表
 function totalAddList(oldList,newObj,fileName){
     if(Array.isArray(oldList)){
-        newObj.id=oldList.length?oldList[oldList.length-1].id+1:1;
+        newObj.id=oldList.length?Number(oldList[oldList.length-1].id)+1:1;
         oldList.push(newObj);
     }else{
         newObj.id=oldList.list.length?oldList.list[oldList.list.length-1].id+1:1;
@@ -186,7 +186,7 @@ app.post("/useraddmenulist",function(req,res){
     let id=req.body.id;
     readFileFn('./mock/addmenu.json',function(err,data){
         if(err) return;
-
+        console.log(id);
         let item=JSON.parse(data).filter((cur,index)=>index+1==id);
         res.json({lists:item[0]});
     });
