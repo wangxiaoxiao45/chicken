@@ -86,7 +86,7 @@ class AddMenu extends Component{
          /*   "titlebg":props.menuCover,*/
             "detail":{
                 "detailImg":props.menuCover,
-                "step":step
+                "steps":step
             },
             "menuCateStory":props.menuCateStory,
             "foodMaterials":foodMaterials,

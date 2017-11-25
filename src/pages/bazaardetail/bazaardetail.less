@@ -17,21 +17,55 @@
   img{
   width:100%;
   }
+  .menuCateStory,.foodMaterials{
+    margin:0 .4rem;
+    padding:.25rem 0 .3rem;
+    color:#555;
+    span{
+      line-height:.48rem;
+      display:block;
+    }
+    p{
+      font-size: .23rem;
+      color: #7a7a7a;
+      line-height: .37rem;
+    }
+  }
+  .foodMaterials{
+    padding-top:.1rem;
+    padding-bottom:.1rem;
+    margin-top:.5rem;
+    margin-bottom:.5rem;
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+    p{
+      text-indent:.46rem;
+      span{
+        display:inline-block;
+        line-height:.3rem;
+        &:nth-of-type(1){
+          width:40%;
+        }
+      }
+
+    }
+  }
 }
 .bazaardetail-detail-title{
   text-align: center;
   font-size: .32rem;
   font-weight: bold;
   box-sizing: border-box;
-  padding: 0 .3rem .1rem;
-  margin-top: .7rem;
-  color:#555;
+  padding: 0 .3rem 0;
+  margin-top: .5rem;
+  color: #9f8d5d;
 }
 .bazaardetail-score{
   text-align:center;
- color:#777;
+  color:#777;
   margin: 0 .3rem;
-  padding-bottom:.8rem;
+  padding-bottom:.5rem;
+  line-height: .4rem;
   border-bottom:1px solid #ebebeb;
   i{font-style:normal;}
   span{
@@ -57,8 +91,9 @@
     border-bottom:1px solid #ebebeb;
     padding: .1rem .2rem;
     img{
+      margin:.1rem 0;
       width:100%;
-      margin:.3rem 0;
+      height:3rem;
     }
     p:nth-child(1){
       margin: .1rem 0 .1rem;

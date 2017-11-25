@@ -96,7 +96,7 @@ app.post("/addmenu",(req,res)=>{
     let mes=req.body;
 
     //把base64图片转成jpg并保存到step里
-    mes.detail.step=mes.detail.step.map((item,index)=>{
+    mes.detail.steps=mes.detail.steps.map((item,index)=>{
         let img=item.img;
         item.title=`步骤${index+1}`;
         if(img.length){
@@ -109,7 +109,7 @@ app.post("/addmenu",(req,res)=>{
     mes.titlebg=mes.detail.detailImg;  //共用同一张图片
 
     //对转化的图片按title排序
-    mes.detail.step.sort(function(a,b){
+    mes.detail.steps.sort(function(a,b){
         return a.title.localeCompare(b.title);
     });
     totalAddList(addMenu,mes,'./mock/addmenu.json');
@@ -145,7 +145,7 @@ function insertMenu(menuName){
             totalAddList(homedishes,menuName,'./mock/homeDishes.json');
             break;
         case '快手菜':
-            totalAddList(fastFood,menuName,'./mock/downMeal.json');
+            totalAddList(fastFood,menuName,'./mock/fastFood.json');
             break;
         case '下饭菜':
             totalAddList(downMeal,menuName,'./mock/downMeal.json');
@@ -171,7 +171,6 @@ function insertMenu(menuName){
     }
 }
 
-
 //添加的菜谱返回给用户
 app.get("/useraddmenu",function(req,res){
     readFileFn('./mock/addmenu.json',function(err,data){
@@ -180,8 +179,6 @@ app.get("/useraddmenu",function(req,res){
     });
 
 });
-
-
 
 //获取首页数据
 app.get('/indexdata',function (req, res) {
@@ -200,14 +197,19 @@ app.get('/homedishes',function (req, res) {
     let {offset,limit}=req.query;
     console.log(offset, limit);
     let homeList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        homeList.push(homedishes.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=homedishes.hasMore=false;
-    }
-    res.json({list:homeList,hasMore});
+
+    readFileFn('./mock/homeDishes.json',function(err,data){
+        data=JSON.parse(data);
+        data.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
+            homeList.push(data.list[i]);
+        }
+        let hasMore=true;
+        if(offset==5){
+            hasMore=homedishes.hasMore=false;
+        }
+        res.json({list:homeList,hasMore});
+    });
 });
 
 
@@ -224,14 +226,18 @@ app.get('/homedishes/:homeId',function (req, res) {
 app.get('/fastFood',function (req, res) {
     let {offset,limit}=req.query;
     let fastList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        fastList.push(fastFood.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=fastFood.hasMore=false;
-    }
-    res.json({list:fastList,hasMore});
+    readFileFn('./mock/fastFood.json',function(err,fastFood) {
+        fastFood = JSON.parse(fastFood);
+        fastFood.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            fastList.push(fastFood.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = fastFood.hasMore = false;
+        }
+        res.json({list: fastList, hasMore});
+    })
 });
 
 //获取快手菜详情页
@@ -246,14 +252,18 @@ app.get('/fastFood/:fastId',function (req, res) {
 app.get('/downMeal',function (req, res) {
     let {offset,limit}=req.query;
     let downList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        downList.push(downMeal.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=downMeal.hasMore=false;
-    }
-    res.json({list:downList,hasMore});
+    readFileFn('./mock/downMeal.json',function(err,downMeal) {
+        downMeal = JSON.parse(downMeal);
+        downMeal.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            downList.push(downMeal.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = downMeal.hasMore = false;
+        }
+        res.json({list: downList, hasMore});
+    })
 });
 
 
@@ -269,14 +279,18 @@ app.get('/downMeal/:downId',function (req, res) {
 app.get('/breakFast',function (req, res) {
     let {offset,limit}=req.query;
     let breakList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        breakList.push(breakFast.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=breakFast.hasMore=false;
-    }
-    res.json({list:breakList,hasMore});
+    readFileFn('./mock/breakFast.json',function(err,breakFast) {
+        breakFast = JSON.parse(breakFast);
+        breakFast.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            breakList.push(breakFast.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = breakFast.hasMore = false;
+        }
+        res.json({list: breakList, hasMore});
+    })
 });
 
 //获取早餐菜详情页
@@ -291,14 +305,18 @@ app.get('/breakFast/:breakId',function (req, res) {
 app.get('/meat',function (req, res) {
     let {offset,limit}=req.query;
     let meatList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        meatList.push(meat.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=meat.hasMore=false;
-    }
-    res.json({list:meatList,hasMore});
+    readFileFn('./mock/meat.json',function(err,meat) {
+        meat = JSON.parse(meat);
+        meat.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            meatList.push(meat.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = meat.hasMore = false;
+        }
+        res.json({list: meatList, hasMore});
+    })
 });
 
 //获取肉类菜详情页
@@ -313,14 +331,18 @@ app.get('/meat/:meatId',function (req, res) {
 app.get('/fish',function (req, res) {
     let {offset,limit}=req.query;
     let fishList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        fishList.push(fish.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=fish.hasMore=false;
-    }
-    res.json({list:fishList,hasMore});
+    readFileFn('./mock/fish.json',function(err,fish) {
+        fish = JSON.parse(fish);
+        fish.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            fishList.push(fish.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = fish.hasMore = false;
+        }
+        res.json({list: fishList, hasMore});
+    })
 });
 
 //获取鱼类菜详情页
@@ -335,14 +357,18 @@ app.get('/fish/:fishId',function (req, res) {
 app.get('/bearFood',function (req, res) {
     let {offset,limit}=req.query;
     let bearList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        bearList.push(bearFood.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=bearFood.hasMore=false;
-    }
-    res.json({list:bearList,hasMore});
+    readFileFn('./mock/bearFood.json',function(err,bearFood) {
+        bearFood = JSON.parse(bearFood);
+        bearFood.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            bearList.push(bearFood.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = bearFood.hasMore = false;
+        }
+        res.json({list: bearList, hasMore});
+    })
 });
 
 //获取下酒菜类菜详情页
@@ -357,14 +383,18 @@ app.get('/bearFood/:bearId',function (req, res) {
 app.get('/vegetableDish',function (req, res) {
     let {offset,limit}=req.query;
     let vegetableList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        vegetableList.push(vegetableDish.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        hasMore=vegetableDish.hasMore=false;
-    }
-    res.json({list:vegetableList,hasMore});
+    readFileFn('./mock/vegetableDish.json',function(err,vegetableDish) {
+        vegetableDish = JSON.parse(vegetableDish);
+        vegetableDish.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            vegetableList.push(vegetableDish.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            hasMore = vegetableDish.hasMore = false;
+        }
+        res.json({list: vegetableList, hasMore});
+    })
 });
 
 //获取素类菜详情页
@@ -379,14 +409,18 @@ app.get('/vegetableDish/:vegetableId',function (req, res) {
 app.get('/dessert',function (req, res) {
     let {offset,limit}=req.query;
     let dessertList=[];
-    for (let i = parseFloat(offset); i < parseFloat(limit)+parseFloat(offset); i++) {
-        dessertList.push(dessert.list[i]);
-    }
-    let hasMore=true;
-    if(offset==5){
-        dessert.hasMore=false;
-    }
-    res.json({list:dessertList,hasMore});
+    readFileFn('./mock/dessert.json',function(err,dessert) {
+        dessert = JSON.parse(dessert);
+        dessert.list.reverse();
+        for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
+            dessertList.push(dessert.list[i]);
+        }
+        let hasMore = true;
+        if (offset == 5) {
+            dessert.hasMore = false;
+        }
+        res.json({list: dessertList, hasMore});
+    })
 });
 
 //获取素类菜详情页
