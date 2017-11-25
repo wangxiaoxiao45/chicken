@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import actions from '../../store/actions/addmenu.js'
 import {get,post} from '../../api/index'
-import {format} from '../../utils'
+import {format,showAlert} from '../../utils'
 
 import Top from "../../components/top/index";
 import Food from "./food/food";
@@ -52,7 +52,16 @@ class AddMenu extends Component{
     };
     //删除菜谱
     del=()=>{
-        this.props.delMenu();
+        showAlert(()=>{
+            this.props.delMenu();
+        },'确定要删除该菜谱吗');
+
+    };
+    //退出填写菜单
+    goback=()=>{
+        showAlert(()=>{
+            this.props.delMenu();
+        },'确定要退出该菜谱吗');
     };
     //提交
     bindleSubmit=()=>{
@@ -108,7 +117,7 @@ class AddMenu extends Component{
     render(){
         return (
             <div className="add-menu">
-                <Top titleVal="菜谱名称" toBack="取消" toGo="继续" ref={(t)=>this.t=t} colorActive={this.state.isShowNext} history={this.props.history} show={this.show}/>
+                <Top titleVal="菜谱名称" toBack="取消" toGo="继续" ref={(t)=>this.t=t} colorActive={this.state.isShowNext} del={this.goback} show={this.show}/>
                 <section className="container">
                     <form>
                         <MenuCover addPicFn={this.props.menuCoverFn} removePicFn={this.props.removeCoverFn} menuCover={this.props.menuCover} describe="+菜谱封面"/>

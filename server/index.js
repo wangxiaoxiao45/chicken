@@ -181,6 +181,17 @@ app.get("/useraddmenu",function(req,res){
 
 });
 
+//获取个人中心列表点击跳转详情信息
+app.post("/useraddmenulist",function(req,res){
+    let id=req.body.id;
+    readFileFn('./mock/addmenu.json',function(err,data){
+        if(err) return;
+
+        let item=JSON.parse(data).filter((cur,index)=>index+1==id);
+        res.json({lists:item[0]});
+    });
+});
+
 
 
 //获取首页数据

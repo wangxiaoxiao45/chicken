@@ -108,7 +108,7 @@ class Person extends Component{
                                 <ul className="person-list">
                                     {data.length>0&&data.map((item,index)=>(
                                         <li key={index}>
-                                            <Link to={`/bazaardetail/${item.id}`}  key={index}>
+                                            <Link to={`/addmenudetail/${item.id}`}  key={index}>
                                                 <div>
                                                     <img src={item.titlebg} alt=""/>
                                                 </div>
