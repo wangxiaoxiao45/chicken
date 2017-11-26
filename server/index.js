@@ -29,7 +29,6 @@ let vegetableDish=require('./mock/vegetableDish');//导入素菜列表
 let dessert=require('./mock/dessert');//导入饮品列表
 let indexData=require('./mock/indexData');//首页数据
 
-let addMenu=require('./mock/addmenu.json'); //读取个人中心上传的菜单
 
 
 app.use(bodyParser.json({limit:'5mb'}));
@@ -90,7 +89,6 @@ function changeToJpg(imgData){
     return name;
 }
 
-
 //获取菜谱 存入数据
 app.post("/addmenu",(req,res)=>{
     let mes=req.body;
@@ -112,21 +110,27 @@ app.post("/addmenu",(req,res)=>{
     mes.detail.steps.sort(function(a,b){
         return a.title.localeCompare(b.title);
     });
-    totalAddList(addMenu,mes,'./mock/addmenu.json');
-
     //插入到对应到菜谱中
     insertMenu(mes);
+
+    readFileFn("./mock/addmenu.json",(err,data)=>{
+        if(err) throw err;
+        totalAddList(JSON.parse(data),mes,'./mock/addmenu.json');
+    });
+
 
     res.json({success:"ok"});
 });
 
 //写入到个人中心菜谱列表
+
 function totalAddList(oldList,newObj,fileName){
     if(Array.isArray(oldList)){
         newObj.id=oldList.length?Number(oldList[oldList.length-1].id)+1:1;
+        newObj.ListId=ListId;
         oldList.push(newObj);
     }else{
-        newObj.id=oldList.list.length?oldList.list[oldList.list.length-1].id+1:1;
+        ListId=newObj.id=newObj.ListId=oldList.list.length?oldList.list[oldList.list.length-1].id+1:1;
         oldList.list.push(newObj);
     }
 
@@ -137,39 +141,49 @@ function totalAddList(oldList,newObj,fileName){
     })
 }
 
+
 //根据传递的classify选项不同 插入到不同的菜单中
 function insertMenu(menuName){
     switch (menuName.classify){
         case '':
         case '家常菜':
-            totalAddList(homedishes,menuName,'./mock/homeDishes.json');
+            readList(menuName,'./mock/homeDishes.json');
             break;
         case '快手菜':
-            totalAddList(fastFood,menuName,'./mock/fastFood.json');
+            readList(menuName,'./mock/fastFood.json');
             break;
         case '下饭菜':
-            totalAddList(downMeal,menuName,'./mock/downMeal.json');
+            readList(menuName,'./mock/downMeal.json');
             break;
         case '早餐':
-            totalAddList(breakFast,menuName,'./mock/breakFast.json');
+            readList(menuName,'./mock/breakFast.json');
             break;
         case '肉类':
-            totalAddList(meat,menuName,'./mock/meat.json');
+            readList(menuName,'./mock/meat.json');
             break;
         case '鱼类':
-            totalAddList(fish,menuName,'./mock/fish.json');
+            readList(menuName,'./mock/fish.json');
             break;
         case '下酒菜':
-            totalAddList(bearFood,menuName,'./mock/bearFood.json');
+            readList(menuName,'./mock/bearFood.json');
             break;
         case '素菜':
-            totalAddList(vegetableDish,menuName,'./mock/vegetableDish.json');
+            readList(menuName,'./mock/vegetableDish.json');
             break;
         case '饮品':
-            totalAddList(dessert,menuName,'./mock/dessert.json');
+            readList(menuName,'./mock/dessert.json');
             break;
     }
 }
+
+function readList(menuName,url){
+    readFileFn(url,function(err,data){
+        if(err) throw err;
+        data=JSON.parse(data);
+        totalAddList(data,menuName,url);
+    });
+}
+
 
 //添加的菜谱返回给用户
 app.get("/useraddmenu",function(req,res){
@@ -180,13 +194,103 @@ app.get("/useraddmenu",function(req,res){
 
 });
 
+//删除上传的菜单
+var ListId=0;
+app.post("/deladdlist",(req,res)=>{
+    let list=req.body;
+    console.log(list);
+    readFileFn("./mock/addmenu.json",(err,data)=>{
+        if(err){
+            throw err;
+        }
+        let itemList;
+        data=JSON.parse(data);
+
+        data=data.filter((item)=>{
+            if(list.id===item.id){
+                itemList=item;
+            }
+            return list.id!==item.id;
+        });
+        if(itemList.detail.detailImg){
+             fs.unlinkSync(itemList.detail.detailImg);
+                itemList.detail.detailImg="";
+             }
+             itemList.detail.steps&&itemList.detail.steps.forEach(function(item){
+
+             if(item.img){
+                fs.unlinkSync(item.img);
+             item.img="";
+             }
+         });
+
+        writeFileFn("./mock/addmenu.json",JSON.stringify(data),function(err){
+            if(err){
+                throw err;
+            }
+            res.json({data:data});
+        });
+    });
+
+    choicedeleteMenu(list,res);
+
+});
+
+//删除分类中的菜谱
+function deleteMenu(fileName,listid){
+    readFileFn(fileName,(err,data)=>{
+        if(err){
+            throw err;
+        }
+        data=JSON.parse(data);
+
+        data.list=data.list.filter((item)=>listid!=item.ListId);
+        writeFileFn(fileName,JSON.stringify(data),function(err){
+            if(err) throw err;
+        });
+    })
+}
+
+function choicedeleteMenu(menuName){
+
+    switch (menuName.classify){
+        case '':
+        case '家常菜':
+            deleteMenu("./mock/homeDishes.json",menuName.ListId);
+            break;
+        case '快手菜':
+            deleteMenu("./mock/fastFood.json",menuName.ListId);
+            break;
+        case '下饭菜':
+            deleteMenu("./mock/downMeal.json",menuName.ListId);
+            break;
+        case '早餐':
+            deleteMenu("./mock/breakFast.json",menuName.ListId);
+            break;
+        case '肉类':
+            deleteMenu("./mock/meat.json",menuName.ListId);
+            break;
+        case '鱼类':
+            deleteMenu("./mock/fish.json",menuName.ListId);
+            break;
+        case '下酒菜':
+            deleteMenu("./mock/bearFood.json",menuName.ListId);
+            break;
+        case '素菜':
+            deleteMenu("./mock/vegetableDish.json",menuName.ListId);
+            break;
+        case '饮品':
+            deleteMenu("./mock/dessert.json",menuName.ListId);
+            break;
+    }
+}
+
 
 //获取个人中心列表点击跳转详情信息
 app.post("/useraddmenulist",function(req,res){
     let id=req.body.id;
     readFileFn('./mock/addmenu.json',function(err,data){
         if(err) return;
-        console.log(id);
         let item=JSON.parse(data).filter((cur,index)=>index+1==id);
         res.json({lists:item[0]});
     });
@@ -207,7 +311,6 @@ app.get('/menuClassification',function (req, res) {
 app.get('/homedishes',function (req, res) {
 
     let {offset,limit}=req.query;
-    console.log(offset, limit);
     let homeList=[];
 
     readFileFn('./mock/homeDishes.json',function(err,data){
@@ -228,7 +331,6 @@ app.get('/homedishes',function (req, res) {
 //家常菜详情页
 app.get('/homedishes/:homeId',function (req, res) {
     let id=req.params.homeId;
-    console.log(id);
     let item=homedishes.list.find(item=>parseFloat(id)===item.homeId);
     res.send(item);
 });
@@ -255,7 +357,6 @@ app.get('/fastFood',function (req, res) {
 //获取快手菜详情页
 app.get('/fastFood/:fastId',function (req, res) {
     let id=req.params.fastId;
-    console.log(id);
     let item=fastFood.list.find(item=>parseFloat(id)===item.fastId);
     res.send(item);
 });
@@ -282,7 +383,6 @@ app.get('/downMeal',function (req, res) {
 //获取下饭菜详情页
 app.get('/downMeal/:downId',function (req, res) {
     let id=req.params.downId;
-    console.log(id);
     let item=downMeal.list.find(item=>parseFloat(id)===item.downId);
     res.send(item);
 });
@@ -308,7 +408,6 @@ app.get('/breakFast',function (req, res) {
 //获取早餐菜详情页
 app.get('/breakFast/:breakId',function (req, res) {
     let id=req.params.downId;
-    console.log(id);
     let item=breakFast.list.find(item=>parseFloat(id)===item.breakId);
     res.send(item);
 });
@@ -429,7 +528,7 @@ app.get('/dessert',function (req, res) {
         }
         let hasMore = true;
         if (offset == 5) {
-            dessert.hasMore = false;
+            hasMore=dessert.hasMore = false;
         }
         res.json({list: dessertList, hasMore});
     })

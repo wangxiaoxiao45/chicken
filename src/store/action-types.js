@@ -18,8 +18,8 @@ export const ADD_USER='ADD_USER';//用户信息
 export const UPLOAD_IMG='UPLOAD_IMG'; //上传图片
 
 /*person*/
-export const USER_ADD_MENU='USER_ADD_MENU';
-export const USER_QUIT='USER_QUIT';
+export const USER_ADD_MENU='USER_ADD_MENU'; //增加菜谱
+export const USER_QUIT='USER_QUIT'; //退出账号
 
 
 export const LOADING='LOADING';

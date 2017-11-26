@@ -94,5 +94,11 @@ export default {
             type:types.DEL_COLLECT,
             payload:item
         }
+    },
+    userDeleteMenu(data){
+        return {
+            type:types.USER_ADD_MENU,
+            payload:data
+        }
     }
 }
