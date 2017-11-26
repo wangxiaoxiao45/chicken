@@ -80,13 +80,17 @@ class AddMenu extends Component{
        });
 
         if(isBool){
-            Toast.info('食材不能为空',1);
+            Toast.info('用料不能为空',1);
             return;
         }
 
         let foodMaterials=props.foodMaterials.filter(item=>item.material!==''||item.num!=='');
         let step=props.step.filter(item=>item.img!==''||item.content!=='');
         console.log(step);
+        if(step.length===0){
+            Toast.info('步骤不能为空',1);
+            return;
+        }
         post('/addmenu',{
             "title":props.menuTitle,
             "score":0,

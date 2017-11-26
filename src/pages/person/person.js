@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Link} from 'react-router-dom'
 import Swiper from 'swiper'
 import {connect} from 'react-redux'
-import {compressImage} from '../../utils'
+import {compressImage,showAlert} from '../../utils'
 import actions from '../../store/actions/session'
 import {get,post} from '../../api/index'
 
@@ -30,6 +30,17 @@ class Person extends Component{
           //释放内存
             URL.revokeObjectURL(imageSrc);
         });
+
+    };
+    //删除菜单
+    delMenu=(e,id,ListId,classify)=>{
+        e.preventDefault();
+        showAlert(()=>{
+            console.log(id,ListId);
+            post("/deladdlist",{id,ListId,classify}).then((res)=>{
+                this.props.userDeleteMenu(res.data);
+            });
+        },'确定要删除该菜谱吗');
 
     };
 
@@ -109,6 +120,7 @@ class Person extends Component{
                                     {data.length>0&&data.map((item,index)=>(
                                         <li key={index}>
                                             <Link to={`/addmenudetail/${item.id}`}  key={index}>
+                                                <i className="iconfont icon-guanbi" onClick={(e)=>this.delMenu(e,item.id,item.ListId,item.classify)}></i>
                                                 <div>
                                                     <img src={item.titlebg} alt=""/>
                                                 </div>
