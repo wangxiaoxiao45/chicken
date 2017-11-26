@@ -8,4 +8,4 @@ import reducer from './reducers'
 
 const history = createHistory();
 const middleware = routerMiddleware(history);
-export default createStore(reducer,applyMiddleware(promiseMiddleware,ReduxThunk,middleware,logger))
+export default createStore(reducer,applyMiddleware(promiseMiddleware,ReduxThunk,middleware))
