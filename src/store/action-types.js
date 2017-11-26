@@ -29,6 +29,7 @@ export const CLEAR='CLEAR';
 
 /*bazaar*/
 export const CLASS_IFCATION="CLASS_IFCATION";//获取菜谱分类
+export const List_CLEAR="List_CLEAR";//清空lis
 
 /*bazaarlist*/
 export const GET_HOMEDISHES="GET_HOMEDISHES";//获取家常菜列表

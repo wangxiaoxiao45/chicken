@@ -95,3 +95,21 @@ export function downRefresh(element,callback){
     }
 }
 
+//下拉加载
+export function upMore(element, callback) {
+    console.log("循环执行");
+    let timerId;
+    element.addEventListener('scroll', function () {
+        if (timerId) clearInterval(timerId);
+        timerId = setTimeout(function () {
+            let scrollTop = element.scrollTop;//得到向上卷曲的高度
+            let clientHeight = element.clientHeight;//视口的高度
+            let scrollHeight = element.scrollHeight;//内容的高度
+            if ((scrollTop + clientHeight + 10) > scrollHeight) {
+                callback();
+            }
+        }, 80)
+
+    });
+
+}

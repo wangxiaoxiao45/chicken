@@ -8,18 +8,19 @@ import '../../common/css/index.less';
 class Bazaar extends Component {
     componentDidMount() {
         this.props.getMenuClassification();
+        this.props.clearlist();
     }
 
     render() {
 
         return (
             <div>
-                <div className="bazaar-top">{this.props.title}</div>
+                <div className="bazaar-top">{this.props.bazaar.title}</div>
                 <div className="container">
                     <h4 className="bazaar-hot">热门分类</h4>
                     <ul className="bazaar-con">
                         {
-                            this.props.list.map((item, index) => (
+                            this.props.bazaar.list.map((item, index) => (
 
                                 <Link to={`/bazaarlist/${item.menuId}`} key={index} >
                                     <img  src={item.menubg}/>
@@ -34,4 +35,4 @@ class Bazaar extends Component {
     }
 }
 import './bazaar.less'
-export default connect(state => state.bazaar, actions)(Bazaar);
+export default connect(state => state, actions)(Bazaar);

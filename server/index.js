@@ -424,12 +424,13 @@ app.get('/dessert',function (req, res) {
     readFileFn('./mock/dessert.json',function(err,dessert) {
         dessert = JSON.parse(dessert);
         dessert.list.reverse();
+        console.log(dessert.list.length);
         for (let i = parseFloat(offset); i < parseFloat(limit) + parseFloat(offset); i++) {
             dessertList.push(dessert.list[i]);
         }
         let hasMore = true;
         if (offset == 5) {
-            dessert.hasMore = false;
+            hasMore=dessert.hasMore = false;
         }
         res.json({list: dessertList, hasMore});
     })
