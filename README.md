@@ -35,3 +35,5 @@
 > 启动后会自动打开网址 http://localhost:8080/#/
 
 
+
+![Alt text](./display.gif)

@@ -33,7 +33,7 @@ let indexData=require('./mock/indexData');//首页数据
 
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(function(req,res,next){
-    res.header('Access-Control-Allow-Origin','http://localhost:8080');
+    res.header('Access-Control-Allow-Origin','http://localhost:2001');
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     res.header('Access-Control-Allow-Headers','Content-Type');
     res.header('Access-Control-Allow-Credentials','true');
@@ -593,7 +593,7 @@ app.post("/userquit",function(req,res){
     }
 });
 
-const port=8887;
+const port=2000;
 app.listen(port,function () {
 
 });
