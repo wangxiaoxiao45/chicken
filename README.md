@@ -1,4 +1,4 @@
-111111000077777
+1
 ### 目录
 
 |--src （开发目录）<br/>
@@ -20,7 +20,7 @@
 |-------|-package.json （npm 配置文件）<br/>
 |-------|-webpack.config.js （webpack 配置文件）<br/>
 
-### 问
+### 问2
 - swiper4  没有提供自定义按钮type:custom 点击的效果
 - div可编辑问题 contentEditable  在react会报一个警告，使用react-contenteditable解决
 `Warning: A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.`
