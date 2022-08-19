@@ -1,4 +1,4 @@
-let6 path=require("path"),
+let7 path=require("path"),
     HtmlWebpackPlugin=require('html-webpack-plugin');
 
 module.exports={
