@@ -1,4 +1,4 @@
-const path=require("path"),
+let path=require("path"),
     HtmlWebpackPlugin=require('html-webpack-plugin');
 
 module.exports={
