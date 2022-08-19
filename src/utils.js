@@ -5,7 +5,7 @@ const alert = Modal.alert;
  * @param percent  压缩比例 0~1
  * @param callback  回调函数
  */
-
+// 9999
 export function compressImage (url,percent,callback){
     let cvs = document.createElement('canvas');
     let ctx = cvs.getContext('2d');
